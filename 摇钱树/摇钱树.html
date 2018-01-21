@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            /*background:#ffff88;*/
+            background: url("images/beijing.jpg") no-repeat;
+            /*background: url("images/person_myx.png") no-repeat;*/
+
+            overflow: hidden;
+            /*background: url("images/bg-cc-1-ie.jpg") no-repeat;*/
+            /*background: url("images/bg-1.jpg") no-repeat;*/
+            /*background:url("images/bp_qlh.png") no-repeat;*/
+            /*background:url("images/1465376232577961.jpg") no-repeat;*/
+            background-size:1366px 600px;
+            /*background-position: -600px 0px;*/
+        }
+        /*#sz {*/
+            /*position: absolute;*/
+            /*right: 0px;*/
+            /*width: 300px;*/
+            /*top: 0;*/
+        /*}*/
+        #sz2 {
+            position: absolute;
+            /*background: url("images/tianxiang.png") no-repeat ;*/
+            left: 800px;
+            /*background: url("images/person_myx.png") no-repeat;*/
+            transform:rotateY(180deg)
+            /*background-size:600px;*/
+            /*background-position: -160px 0px;*/
+            /*right: 0px;*/
+        /*left : 600 px;*/
+            /*height: 600px;*/
+            /*width: 350px;*/
+            /*width: 300px;*/
+            /*top: 100px;*/
+        }
+        #map {
+            height: 600px;
+            width: 800px;
+            margin-left: 250px;
+            /*margin-top: 60px;*/
+            /*border: 2px solid rgba(0,0,0,0.5);*/
+            position: relative;
+            overflow: hidden;
+            /*border: 1px solid #000000;*/
+            margin-top: 20px;
+        }
+        .shu {
+            background: url("images/yao.png") no-repeat;
+            background-position-y: 40px;
+            background-size: 550px;
+            margin-left: 100px;
+            /*margin-top: 50px;*/
+        }
+        /*.tushu {*/
+            /*background: url("images/tu.png") no-repeat;*/
+            /*background-size: 600px;*/
+            /*margin-left: 100px;*/
+        /*}*/
+        .xt {
+            background: url("images/10.png") repeat-x;
+            background-size: 25px;
+            animation: go1 0.3s infinite linear;
+            margin-top: -20px;
+        }
+
+        .tk {
+            background: url("images/15.png") no-repeat;
+            background-size:100px;
+            z-index: 15;
+
+        }
+        .tk p {
+            background: url("images/jin.png") no-repeat;
+            background-size:100px 100px;
+            z-index: 15;
+            position: absolute;
+            left: -50px;
+            top: -20px;
+            display: block;
+            /*transform:rotateY(180deg)*/
+        }
+
+        .yuanbao {
+            background: url("images/yuanbao.png") no-repeat;
+            z-index: 5;
+            background-size:40px;
+            transform-origin: 20px 20px;
+        }
+        .fu {
+            /*background:url("images/30.jpg") no-repeat;*/
+            /*background-size: 40px 100px;*/
+            /*opacity: 0.4;*/
+            background:url("images/fu.png") no-repeat ;
+            background-size:40px;
+
+            /*animation: go1 0.3s infinite linear;*/
+            z-index: 8;
+
+        }
+        .buff {
+            z-index: 10;
+        }
+        .buff img {
+            width: 50px;
+            animation: go1 0.3s infinite linear;
+        }
+        @keyframes go1 {
+            from {
+                /* box-shadow:x y 模糊 颜色; */
+                box-shadow:0 0 0px red;
+            }
+
+            to {
+                box-shadow:0 0 50px gold;
+            }
+        }
+    </style>
+</head>
+<body>
+<!--<img src="images/person_myx.png" alt="" id="sz2"/>-->
+<!--<div id="sz2"></div>-->
+<div id="map"></div>
+<div>
+
+</div>
+<script src="luxian.js"></script>
+<script>
+
+    var map=document.getElementById("map");
+    var num=1;
+//    我方坦克对象
+(function () {
+//    坦克构造函数
+    var that
+function Tank(options){
+    this.width=options.width||100
+    this.height=options.height||100
+    this.map=options.map
+//    this.bj=options.bj||"blue"
+    this.elements
+    this.direction=options.direction||"up"
+    this.tk={x:4,y:10}
+    this.er=options.er
+    this.paodan=[]
+    this.num=0
+    that=this
+    this.X=0
+    this.wuqi="fu"
+    this.dushu
+    this.fanzhuan=0
+    this.zhengfu=-1
+}
+//    坦克初始化
+    Tank.prototype.init= function () {
+        if(this.elements){
+            this.map.removeChild(this.elements)
+        }
+        this.elements=document.createElement("div")
+        var div=this.elements
+//        div.id=""
+        div.style.height=this.height+"px"
+        div.style.width=this.width+"px"
+        div.style.color=this.bj
+//        div.innerText=""
+        div.className="tk"
+        div.style.fontWeight="bold"
+        div.style.transform=this.dushu
+        div.style.position="absolute"
+        div.style.transform="rotateY("+this.fanzhuan+"deg)"
+        this.map.appendChild(div)
+        div.style.left=this.tk.x*this.width/2+"px"
+        div.style.top=this.tk.y*this.width/2+"px"
+        var p=document.createElement("p")
+        p.style.height=this.height+"px"
+        p.style.width=this.width+"px"
+//        div.style.position="absolute"
+        div.appendChild(p)
+//        p.style.left=-200+"px"
+//        p.style.top=0+"px"
+
+    }
+
+    Tank.prototype.move= function () {
+
+        switch(this.direction){
+            case "right":this.tk.x++
+                this.fanzhuan=180
+                this.zhengfu=1;break
+            case "left":this.tk.x--
+                this.zhengfu=-1
+                this.fanzhuan=0
+                ;break
+            case "up":this.tk.y--
+                ;break
+            case "down":this.tk.y++
+                ;break
+        }
+       
+        this.tk.x=this.tk.x<0?0:this.tk.x
+        this.tk.x=this.tk.x>(this.map.offsetWidth/this.width-1)*2?14:this.tk.x
+        this.tk.y=this.tk.y<(this.map.offsetHeight/this.height-1)?(this.map.offsetHeight/this.height-1):this.tk.y
+        this.tk.y=this.tk.y>(this.map.offsetHeight/this.height-1)*2?10:this.tk.y
+        if(this.elements.offsetLeft==this.er.elements.offsetLeft&&this.elements.offsetTop==this.er.elements.offsetTop){
+            num++
+            switch (num){
+                case 2:this.bj="green";break
+                case 3:this.bj="darkred";break
+                case 4:this.bj="skyblue";break
+                case 5:this.bj="black";break
+                case 6:num=1;this.bj="blue"
+                case 7:num=1;this.bj="blue"
+                case 8:num=1;this.bj="blue"
+                case 9:num=1;this.bj="blue"
+            }
+            this.er.init()
+        }
+        this.init()
+    }
+Tank.prototype.pao= function () {
+
+    var div=document.createElement("div")
+    div.style.width="40px"
+    div.style.height="80px"
+    div.style.position="absolute"
+    if(this.zhengfu>0){
+        div.style.left=this.elements.offsetLeft+this.elements.offsetWidth+"px"
+    }else{
+        div.style.left=this.elements.offsetLeft-50+"px"
+    }
+
+    div.style.top=this.elements.offsetTop+"px"
+   div.className=this.wuqi
+    this.map.appendChild(div)
+    this.paodan.push(div)
+}
+//    炮弹运动轨迹
+    window.Tank=Tank
+//
+})();
+
+//    饵
+(function () {
+    function Er(options){
+        this.width=options.width||100
+        this.height=options.height||100
+        this.map=options.map
+        this.x=0
+        this.y=0
+//        this.bj=options.bj||"red"
+        this.elements
+    }
+    Er.prototype.init= function () {
+        if(this.elements){
+            this.map.removeChild(this.elements)
+        }
+        this.elements=document.createElement("div")
+        var div=this.elements
+        div.id="jinhua"
+        div.style.height=this.height+"px"
+        div.style.width=this.width+"px"
+        div.className="buff"
+        div.innerHTML="<img src='images/11.png'/>"
+        div.style.position="absolute"
+        this.map.appendChild(div)
+        this.x=Math.floor(Math.random()*this.map.offsetWidth/this.width)
+        this.y=Math.floor(Math.random()*this.map.offsetHeight/this.height/2)+3
+        div.style.left=this.x*this.width+"px"
+        div.style.top=this.y*this.height+"px"
+    }
+    window.Er=Er
+})();
+
+//  敌方坦克对象
+    (function () {
+        function DiTank(options){
+            this.width=options.width||600
+            this.height=options.height||600
+            this.map=options.map
+            this.x=0
+            this.y=0
+            this.bj=options.bj||"black"
+            this.elements
+            this.beijing="shu"
+            this.dipaodan=[];
+            this.shanghai=[]
+            this.xue=options.xue||this.width
+            this.x=0
+            this.y=0.1
+        }
+        DiTank.prototype.init= function () {
+            if(this.elements){
+                this.map.removeChild(this.elements)
+            }
+            this.elements=document.createElement("div")
+            var div=this.elements
+            div.style.height=this.height+"px"
+            div.style.width=this.width+"px"
+            div.className=this.beijing
+            div.style.background=""
+            div.style.fontSize=this.width+"px"
+            div.style.textAlign="center"
+            div.style.position="absolute"
+            this.map.appendChild(div)
+            var p=document.createElement("p")
+            p.style.height=this.height/20+"px"
+            p.style.width=this.xue+"px"
+//            p.style.background="url=('imgaes/10.png')"
+            p.className="xt"
+            p.style.position="absolute"
+            p.style.top=this.height/14+"px"
+            p.style.left=0+"px"
+            div.appendChild(p)
+            div.style.left=0+"px"
+            div.style.top=0+"px"
+        }
+
+        DiTank.prototype.dipao= function () {
+            var div=document.createElement("div")
+            div.style.width="40px"
+            div.style.height="40px"
+            div.style.position="absolute"
+            this.x=Math.floor(Math.random()*this.map.offsetWidth/60+4)
+            div.style.left=this.x*40+"px"
+            div.style.top=this.elements.offsetTop+this.elements.offsetHeight/3+"px"
+            div.className="yuanbao"
+            this.map.appendChild(div)
+            this.dipaodan.push(div)
+
+        }
+        window.DiTank=DiTank
+
+    })();
+
+//    操控
+(function () {
+    var that
+    var obj={}
+    var timer = null
+    var timerup=null
+    var jinnum=2
+    var anniu
+    function Game(options) {
+        this.map = options.map
+        this.er = new Er({map: map})
+        this.Tank = new Tank({map: map, er: this.er})
+        this.DiTank=new DiTank({map:map})
+        that = this
+    }
+    Game.prototype.init = function () {
+        this.Tank.init()
+        this.er.init()
+        this.DiTank.init()
+
+    }
+
+
+    Game.prototype.control = function () {
+        map.onclick= function () {
+            for (var i = 0; i <jinnum; i++) {
+                that.DiTank.dipao()
+            }
+            if (that.DiTank.elements.offsetTop<that.Tank.elements.offsetTop) {
+                var arr2=that.DiTank.dipaodan.splice(0)
+                arr2.timerup = setInterval(function () {
+                    for (var i =arr2.length-1; i >=0; i--) {
+                        if(parseInt(arr2[i].style.top)<that.map.offsetHeight/1.6){
+                            arr2[i].style.top = arr2[i].offsetTop +30+i*4 + "px"
+                            console.log("a");
+                        }else {
+                            biansu(arr2[i],{left:that.Tank.elements.offsetLeft,top:that.Tank.elements.offsetTop},null,50)
+                        }
+//
+                    }
+                    if(arr2.length>0){
+                        if(Math.abs(arr2[0].offsetTop-that.Tank.elements.offsetTop)<30&&Math.abs(arr2[0].offsetLeft-that.Tank.elements.offsetLeft)<30){
+                            that.map.removeChild(arr2[0])
+                            arr2.splice(0,1)
+                        }
+                    }
+                }, 200);
+            }
+        }
+        document.onkeydown = function (e) {
+            var e = e || window.event
+            var keycode = e.keyCode
+            switch (keycode) {
+                case 37:
+                    that.Tank.direction = "left";
+                    that.Tank.move()
+                    break;
+                case 38:
+                    that.Tank.direction = "up";
+                    that.Tank.move()
+                    break;
+                case 39:
+                    that.Tank.direction = "right";
+                    that.Tank.move()
+                    break;
+                case 40:
+                    that.Tank.direction = "down";
+                    that.Tank.move()
+                    break;
+                case 13:
+                        anniu="huiche"
+                        for (var i = 0; i <num; i++) {
+                          that.Tank.wuqi="yuanbao"
+                            that.Tank.pao()
+                        }
+                    var dushu=0
+                    if (that.Tank.direction == "up") {
+                        var arr=that.Tank.paodan.splice(0)
+                        arr.timerup = setInterval(function () {
+                            dushu+=45
+                            for (var i =arr.length-1; i >=0; i--) {
+                                arr[i].style.transform="rotate("+dushu+"deg)"
+                                arr[i].style.top = arr[i].offsetTop -20 + "px"
+                                if(i%2==0){
+                                    arr[i].style.left=arr[i].offsetLeft-(i) +"px"
+                                }else{
+                                    arr[i].style.left=arr[i].offsetLeft+(i+1) +"px"
+                                }
+                                buzhuo(arr[i],that.DiTank.elements)
+                            }
+                            if(arr.length>0){
+                                if(parseInt(arr[0].style.top)<0){
+                                    that.map.removeChild(arr[0])
+                                    arr.splice(0,1)
+                                }
+                            }else{
+                                clearInterval(arr.timerup)
+                            }
+                        }, 100);
+                    }
+                    if (that.Tank.direction == "down") {
+                        var arr=that.Tank.paodan.splice(0)
+                        arr.timerdown = setInterval(function () {
+                            dushu+=45
+                            for (var i =arr.length-1; i >=0; i--) {
+                                arr[i].style.transform="rotate("+dushu+"deg)"
+                                arr[i].style.top = arr[i].offsetTop +20 + "px"
+                                if(i%2==0){
+                                    arr[i].style.left=arr[i].offsetLeft-(i) +"px"
+                                }else{
+                                    arr[i].style.left=arr[i].offsetLeft+(i+1) +"px"
+                                }
+                                buzhuo(arr[i],that.DiTank.elements)
+                            }
+                            if(arr.length>0){
+                                if(parseInt(arr[0].style.top)>that.map.offsetHeight){
+                                    that.map.removeChild(arr[0])
+                                    arr.splice(0,1)
+                                }
+                            }else{
+                                clearInterval(arr.timerdown)
+                            }
+
+                        }, 100);
+                    }
+                    if (that.Tank.direction == "left") {
+                        var arr=that.Tank.paodan.splice(0)
+//                        for (var i = 0; i < arr.length; i++) {
+//                            arr[i].style.transform="rotateY(180deg)"
+//                        }
+                        timerdown = setInterval(function () {
+                            dushu+=45
+                            for (var i =arr.length-1; i >=0; i--) {
+                                arr[i].style.transform="rotate("+dushu+"deg)"
+                                arr[i].style.left = arr[i].offsetLeft - 20 + "px"
+                                if(i%2==0){
+                                    arr[i].style.top=arr[i].offsetTop-(i) +"px"
+                                }else{
+                                    arr[i].style.top=arr[i].offsetTop+(i+1) +"px"
+                                }
+                                buzhuo(arr[i],that.DiTank.elements)
+                            }
+                            if(arr.length>0){
+                                if(parseInt(arr[0].style.left)<0){
+                                    that.map.removeChild(arr[0])
+                                    arr.splice(0,1)
+                                }
+                            }else{
+                                clearInterval(arr.timerdown)
+                            }
+                        }, 100);
+                    }
+                    if (that.Tank.direction == "right") {
+                        var arr=that.Tank.paodan.splice(0)
+                        timerdown = setInterval(function () {
+                            dushu+=45
+                            for (var i =arr.length-1; i >=0; i--) {
+                                arr[i].style.transform="rotate("+dushu+"deg)"
+                                arr[i].style.left = arr[i].offsetLeft + 20 + "px"
+                                if(i%2==0){
+                                    arr[i].style.top=arr[i].offsetTop-(i) +"px"
+                                }else{
+                                    arr[i].style.top=arr[i].offsetTop+(i+1) +"px"
+                                }
+                                buzhuo(arr[i],that.DiTank.elements)
+                            }
+                            if(arr.length>0){
+                                if(parseInt(arr[0].style.left)>that.map.offsetWidth){
+                                    that.map.removeChild(arr[0])
+                                    arr.splice(0,1)
+                                }
+                            }else{
+                                clearInterval(arr.timerdown)
+                            }
+                        }, 100);
+                    }
+                    break;
+                case 32:
+                        anniu=""
+                    for (var i = 0; i <num; i++) {
+                        that.Tank.wuqi="fu"
+                      that.Tank.pao()
+                    }
+                        var dushu=0
+                    if (that.Tank.direction == "up") {
+                   var arr=that.Tank.paodan.splice(0)
+                        arr.timerup = setInterval(function () {
+                            dushu+=45
+                        for (var i =arr.length-1; i >=0; i--) {
+                            arr[i].style.transform="rotate("+dushu+"deg)"
+                            arr[i].style.top = arr[i].offsetTop -20 + "px"
+                            if(i%2==0){
+                                arr[i].style.left=arr[i].offsetLeft-(i) +"px"
+                            }else{
+                                arr[i].style.left=arr[i].offsetLeft+(i+1) +"px"
+                            }
+                            buzhuo(arr[i],that.DiTank.elements)
+                        }
+                            if(arr.length>0){
+                                if(parseInt(arr[0].style.top)<0){
+                                    that.map.removeChild(arr[0])
+                                    arr.splice(0,1)
+                                }
+                            }else{
+                                clearInterval(arr.timerup)
+                            }
+                        }, 100);
+                }
+                    if (that.Tank.direction == "down") {
+                        var arr=that.Tank.paodan.splice(0)
+                        arr.timerdown = setInterval(function () {
+                            dushu+=45
+                            for (var i =arr.length-1; i >=0; i--) {
+                                arr[i].style.transform="rotate("+dushu+"deg)"
+                                arr[i].style.top = arr[i].offsetTop +20 + "px"
+                                if(i%2==0){
+                                    arr[i].style.left=arr[i].offsetLeft-(i) +"px"
+                                }else{
+                                    arr[i].style.left=arr[i].offsetLeft+(i+1) +"px"
+                                }
+                                buzhuo(arr[i],that.DiTank.elements)
+                            }
+                            if(arr.length>0){
+                                if(parseInt(arr[0].style.top)>that.map.offsetHeight){
+                                    that.map.removeChild(arr[0])
+                                    arr.splice(0,1)
+                                }
+                            }else{
+                                clearInterval(arr.timerdown)
+                            }
+
+                        }, 100);
+                    }
+                    if (that.Tank.direction == "left") {
+                        var arr=that.Tank.paodan.splice(0)
+//                        for (var i = 0; i < arr.length; i++) {
+//                            arr[i].style.transform="rotateY(180deg)"
+//                        }
+                        timerdown = setInterval(function () {
+                            dushu+=45
+                            for (var i =arr.length-1; i >=0; i--) {
+                                arr[i].index=i
+                                arr[i].style.transform="rotate("+dushu+"deg)"
+                                arr[i].style.left = arr[i].offsetLeft - 20 + "px"
+                                if(i%2==0){
+                                    arr[i].style.top=arr[i].offsetTop-(i) +"px"
+                                }else{
+                                    arr[i].style.top=arr[i].offsetTop+(i+1) +"px"
+                                }
+                                buzhuo(arr[i],that.DiTank.elements)
+                            }
+                            if(arr.length>0){
+                                if(parseInt(arr[0].style.left)<0){
+                                    that.map.removeChild(arr[0])
+                                    arr.splice(0,1)
+                                }
+                            }else{
+                                clearInterval(arr.timerdown)
+                            }
+                        }, 100);
+                    }
+                    if (that.Tank.direction == "right") {
+                        var arr=that.Tank.paodan.splice(0)
+                        timerdown = setInterval(function () {
+                            dushu+=45
+                            for (var i =arr.length-1; i >=0; i--) {
+                                arr[i].style.transform="rotate("+dushu+"deg)"
+                                arr[i].style.left = arr[i].offsetLeft + 20 + "px"
+                                if(i%2==0){
+                                    arr[i].style.top=arr[i].offsetTop-(i) +"px"
+                                }else{
+                                    arr[i].style.top=arr[i].offsetTop+(i+1) +"px"
+                                }
+                                buzhuo(arr[i],that.DiTank.elements)
+                            }
+                            if(arr.length>0){
+                                if(parseInt(arr[0].style.left)>that.map.offsetWidth){
+                                    that.map.removeChild(arr[0])
+                                    arr.splice(0,1)
+                                }
+                            }else{
+                                clearInterval(arr.timerdown)
+                            }
+                        }, 100);
+                    }
+            }
+        }
+
+
+//        捕捉
+        function buzhuo(element1,element2){
+//            if(parseInt(element1.offsetLeft-element2.offsetLeft)<element2.offsetWidth&&parseInt(element1.offsetTop-element2.offsetTop)<20){
+                if(element1.offsetLeft>320&&element1.offsetLeft<360||element1.offsetTop<200&&element1.offsetTop>150&&element1.offsetLeft<700&&element1.offsetLeft>100){
+               if(anniu){
+                       element1.style.opacity=0
+                   that.DiTank.xue+=shang
+//                   map.click()
+                   var b=document.createElement("b")
+                   b.style.width="300px"
+                   b.style.height="60px"
+                   b.style.color="green"
+                   b.style.fontSize="60px"
+                   b.innerText=shang*100000
+                   b.style.zIndex=4
+                   b.style.left=that.DiTank.elements.offsetLeft+that.DiTank.elements.offsetWidth/2+"px"
+                   b.style.top=that.DiTank.elements.offsetTop+that.DiTank.elements.offsetHeight/2+"px"
+                   b.style.position="absolute"
+                   that.map.appendChild(b)
+                   that.DiTank.shanghai.push(b)
+                   anmiatey(b,-100,100)
+                   that.DiTank.init()
+               }else {
+                   that.DiTank.xue-=shang
+                   shyb++
+                   map.click()
+                   var b=document.createElement("b")
+                   b.style.width="300px"
+                   b.style.height="60px"
+                   b.style.color="red"
+                   if(jinnum==0){
+                       b.style.fontSize="30px"
+                       b.innerText="别砍了，快秃了"
+                   }else if(jinnum==1){
+                       b.style.fontSize="18px"
+                       b.innerText="你丢的是金斧头，还是银斧头？"
+                   }else if(jinnum<0){
+//                       that.DiTank.beijing="tushu"
+
+                   }
+                   else{
+                       b.style.fontSize="60px"
+                       b.innerText=shang*100000
+                   }
+                   b.style.zIndex=4
+                   b.style.left=that.DiTank.elements.offsetLeft+that.DiTank.elements.offsetWidth/2+"px"
+                   b.style.top=that.DiTank.elements.offsetTop+that.DiTank.elements.offsetHeight/2+"px"
+                   b.style.position="absolute"
+                   that.map.appendChild(b)
+                   that.DiTank.shanghai.push(b)
+                   anmiatey(b,-100,100)
+                   that.DiTank.init()
+                   if(that.DiTank.xue<0){
+                       jinnum--
+                       that.DiTank.x=0
+                       that.DiTank.y=0
+                       that.DiTank.height=600
+                       that.DiTank.width=600
+//                    that.DiTank.xue=600
+                       that.DiTank.xue=that.DiTank.width
+//                    shang/=2
+//                    that.DiTank=new DiTank({map:map,width:200,height:200,x:1,y:0.5,xue:600})
+                       that.DiTank.init()
+                   }
+               }
+            }else{
+                if(that.DiTank.shanghai.length>20){
+                    that.map.removeChild(that.DiTank.shanghai[0])
+                    that.DiTank.shanghai.splice(0,1)
+                }
+            }
+        }
+    }
+    window.Game=Game
+})();
+var shang=10
+    var shyb=0
+    var star = new Game({map: map})
+    star.init()
+    star.control()
+
+
+
+</script>
+</body>
+</html>

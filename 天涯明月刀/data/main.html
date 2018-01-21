@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>天涯明月刀-官方网站-腾讯游戏-全新公测资料片“沧海云帆”震撼上线！</title>
+    <meta name="discription" content="北宋之年，近十年来，太白、神威、唐门、丐帮、天香、五毒、少林、真武、
+    神刀等派崭露头角，群雄并立于八荒之中。而传说中神秘而强大的组织青龙会，亦神出鬼没，无人得见其真容。数十年来
+    ，却成为江湖中血雨腥风的根源。" />
+    <meta name="Keywords" content="玩家在太白、神威、唐门、丐帮、天香、五毒、少林、真武、神刀之中选择不同的门派，
+    在上述大背景之下完成各自门派的任务" />
+    <!-- 网站图标-->
+    <link rel="shortcut icon" href="../favicon.ico"/>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/main.css"/>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+         $(function (){
+            var TopY = document.getElementById("Y_Top");
+            var qinY = TopY.firstElementChild;
+            var ulY = qinY.children[0];
+            var lisY = ulY.children;
+            var tR=document.getElementsByClassName("tR")
+             for (var i = 0; i < tR.length; i++) {
+                tR[i].style.position="absolute"
+            }
+
+            var iy = [];
+            for (var i = 1; i < lisY.length; i++) {
+                lisY[i].style.left = 392 + 68 * (i - 1) + "px";
+                var iY = lisY[i].children[0];
+                iY.style.width = 68 + "px";
+                iY.style.height = 299 + "px";
+                iY.style.display = "block";
+                iY.style.float = " left";
+                iY.style.backgroundImage = "url(../images/fans.jpg)";
+                iY.style.backgroundPositionX =  -68 * (i - 1)+ "px";
+                iy.push(-68 * (i - 1));
+            }
+            var lisY = $("#Y_ul").children();
+            var isY = lisY.children("i");
+            isY.click(function () {
+                for (var i = 0; i < isY.length; i++) {
+                    console.log(1);
+                    isY[i].style.backgroundPositionX=iy[i]+"px"
+                }
+                var fuY = $(this).parent();
+                var index =fuY.index();
+                var target = -68 * (5 + index);
+                $(this).css("backgroundPositionX",target);
+                for (var i = 0; i < $(this).parent().index(); i++) {
+                    tR[i].style.left=i*68+"px"
+                }
+                console.log(tR.length + 1);
+                for (var i =  $(this).parent().index(); i <tR.length; i++) {
+
+                    tR[i].style.left=i*68+392+"px"
+                }
+                $(this).parent().animate({left:($(this).parent().index()-1)*68}).prevAll(".tR");
+//               console.log($(this).parent().index());
+//               for (var i = 0; i < $(this).parent().index(); i++) {
+//                   $(this).parent().prevAll(".tR").animate({left:($(this).index())*68})
+//                   console.log(i);
+//                   console.log($(".tR").eq(i));
+//                   $(".tR").css({left:68})
+
+//               }
+
+
+            })
+
+        });
+        /*----------------------------------------------------*/
+        $(function () {
+            var liY = $(".Y_four").children("li");
+            liY.mouseover(function () {
+                var aS =$(this).children("a");
+                aS.stop().animate({paddingTop: 60},250, "linear");
+                aS.siblings().stop().animate({
+                    top: -52,
+                    opacity: 0
+                },250, "linear")
+            });
+            liY.mouseleave(function () {
+                var aS =$(this).children("a");
+                aS.stop().animate({paddingTop: 90},250, "linear");
+                aS.siblings().stop().animate({
+                    top: 28,
+                    opacity: 1
+                },250, "linear")
+            })
+        })
+    </script>
+</head>
+<body>
+
+
+<div id="header">
+    <div class="container">
+        <div class="fl h-l">
+            <img src="../images/logo-black-mid.png" alt=""/>
+        </div>
+        <div class="fr h-r">
+            <ul>
+                <li><span>官网首页</span></li>
+                <li>
+                    <dl>
+                    <dt>新闻中心</dt>
+                    <dd><a href="#">首页</a></dd>
+                    <dd><a href="#">新闻中心</a></dd>
+                    <dd><a href="#">公告</a></dd>
+                    <dd><a href="#">新闻</a></dd>
+                    <dd><a href="#">活动</a></dd>
+                    <dd><a href="#">媒体</a></dd>
+                    <dd><a href="#">攻略</a></dd>
+                    <dd><a href="#">直播</a></dd>
+                 </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>游戏介绍</dt>
+                        <dd><a href="#">新手指南</a></dd>
+                        <dd><a href="#">游戏特色</a></dd>
+                        <dd><a href="#">世界背景</a></dd>
+                        <dd><a href="#">门派介绍</a></dd>
+                        <dd><a href="#">身份介绍</a></dd>
+                        <dd><a href="#">设定站</a></dd>
+                        <dd><a href="mask.html" target="_blank">公子羽主体站</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>下载专区</dt>
+                        <dd><a href="#">游戏下载</a></dd>
+                        <dd><a href="#">硬件配置</a></dd>
+                        <dd><a href="#">服务器状态</a></dd>
+                        <dd><a href="#">精英服招募</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>互动专区</dt>
+                        <dd><a href="#">活动中心</a></dd>
+                        <dd><a href="#">版本中心</a></dd>
+                        <dd><a href="#">天积系统</a></dd>
+                        <dd><a href="#">微博微信</a></dd>
+                        <dd><a href="#">官方论坛</a></dd>
+                        <dd><a href="#">官方同人站</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>视听盛宴</dt>
+                        <dd><a href="#">视频</a></dd>
+                        <dd><a href="#">音乐</a></dd>
+                        <dd><a href="#">壁纸</a></dd>
+                        <dd><a href="#">原画</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>用户中心</dt>
+                        <dd><a href="#">账号充值</a></dd>
+                        <dd><a href="#">角色查询</a></dd>
+                        <dd><a href="#">封停查询</a></dd>
+                        <dd><a href="#">礼包兑换</a></dd>
+                        <dd><a href="#">账号安全</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>客户服务</dt>
+                        <dd><a href="#">在线客服</a></dd>
+                        <dd><a href="#">客服专区</a></dd>
+                        <dd><a href="#">用户协议</a></dd>
+                        <dd><a href="#">玩家条例</a></dd>
+                    </dl>
+                </li>
+            </ul>
+
+        </div>
+        <div class="h-d">
+            <img src="../images/slogan20170704.png" alt=""/>
+        </div>
+    </div>
+</div>
+<!--header 区完  --------------  -->
+
+<!--banner   区    star--------------->
+
+<div id="banner">
+    <div class="container">
+        <div class="b-l">
+            <ul>
+                <li><a href="#"><h2>游戏下载</h2><p>DOWNLOAD</p></a></li>
+                <li><a href="#">礼包兑换</a></li>
+                <li><a href="#">充值中心</a></li>
+                <li><a href="#">新手指南</a></li>
+            </ul>
+        </div>
+        <div class="b-c">
+            <ul class = "u-o">
+                <li><img src="../images/1505477134.jpg" width= "798" height="300" alt=""/></li>
+                <li><img src="../images/1505477092.jpg" width= "798" height="300" alt=""/></li>
+                <li><img src="../images/1505476821.jpg" width= "798" height="300" alt=""/></li>
+                <li><img src="../images/1505476807.jpg" width= "798" height="300" alt=""/></li>
+                <li><img src="../images/1505134839.jpg" width= "798" height="300" alt=""/></li>
+                <li><img src="../images/1505135797.jpg" width= "798" height="300" alt=""/></li>
+                <li><img src="../images/1504161584.jpg" width= "798" height="300" alt=""/></li>
+            </ul>
+            <ul class = "u-d">
+                <li>新服今夕何夕</li>
+                <li>学霸养成记</li>
+                <li>重返江湖</li>
+                <li>大国风行，以歌祈年</li>
+                <li>天刀携手Discovery</li>
+                <li>天刀助手新版上线</li>
+                <li>休宝课堂天刀专场</li>
+            </ul>
+        </div>
+        <div class = "b-r">
+            <div class = "r-t">
+                <span></span>
+                <span>
+                    <p>本周新区推荐</p>
+                    <p>青龙永夜&nbsp;&nbsp;时光沧海</p>
+                </span>
+            </div>
+            <div class = "r-c">
+                <a href="#"><img src="../images/1499414734.jpg" width="230" alt=""/></a>
+            </div>
+            <div class = "r-b">
+                <ul>
+                    <li>
+                        <a href="#">【商城上新】全新玄甲马具&nbsp;&nbsp;圣绣-齐...</a>
+                    </li>
+                    <li>
+                        <a href="#">【高能剧透】天刀全新史诗话本揭秘...</a>
+                    </li>
+                    <li>
+                        <a href="#"> 有爱同人，show出真我——天刀同...</a>
+                    </li>
+                    <li>
+                        <a href="#">【天刀7.1公测】神刀再起&nbsp;&nbsp;群侠共创...</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="news">
+    <div class="container clearfix">
+        <div class="news-l">
+            <ul>
+                <li>
+                    <i class="font-icon">&#xe66a;</i>
+                    <a href="#">资料站</a>
+                </li>
+                <li>
+                    <i class="font-icon">&#xe60e;</i>
+                    <a href="#">攻略中心</a>
+                </li>
+                <li>
+                    <i class="font-icon">&#xf0148;</i>
+                    <a href="#">活动中心</a>
+                </li>
+                <li>
+                    <i class="font-icon">&#xe726;</i>
+                    <a href="#">版本中心</a>
+                </li>
+                <li>
+                    <i class="font-icon">&#xe624;</i>
+                    <a href="#">官方论坛</a>
+                </li>
+                <li>
+                    <i class="font-icon">&#xe637;</i>
+                    <a href="#">官方微博</a>
+                </li>
+            </ul>
+        </div>
+        <div class="news-c-l">
+            <ul class="clearfix">
+                <li>头条</li>
+                <li>新闻</li>
+                <li>公告</li>
+                <li>活动</li>
+                <li>直播</li>
+                <p class="fr">更多+</p>
+                <span></span>
+            </ul>
+            <div class="news-c-l-b">
+                    <ol class="clearfix">
+                        <li>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl"> 9月23日周六新服“沧海云帆-今夕何夕”开放！</a>
+                                <i>09/15</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl">[开学季]学霸养成&时装周二期火爆开启！</a>
+                                <i>09/15</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl">《天刀助手》新版上线 功能更便捷</a>
+                                <i>08/31</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[媒体]</a>
+                                <a href="#" class="content fl">【斗鱼】八月狂欢盛宴 粉丝回馈天刀专属周开启</a>
+                                <i>08/14</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[活动]</a>
+                                <a href="#" class="content fl"> 【17173】休宝课堂天刀专场开启 免费学做视频</a>
+                                <i>08/17</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl"> 【17173】休宝课堂天刀专场开启 免费学做视频</a>
+                                <i>06/28</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl"> 【官方微信】“周周礼”福利翻倍！等您来领取！</a>
+                                <i>05/08</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl"> 首届天刀编舞大赛今日开启 让角色按你的想法跳</a>
+                                <i>06/15</i>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl"> 9月23日周六新服“沧海云帆-今夕何夕”开放！</a>
+                                <i>09/15</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl">[开学季]学霸养成&时装周二期火爆开启！</a>
+                                <i>09/15</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl">《天刀助手》新版上线 功能更便捷</a>
+                                <i>08/31</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[媒体]</a>
+                                <a href="#" class="content fl">【斗鱼】八月狂欢盛宴 粉丝回馈天刀专属周开启</a>
+                                <i>08/14</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[活动]</a>
+                                <a href="#" class="content fl"> 【17173】休宝课堂天刀专场开启 免费学做视频</a>
+                                <i>08/17</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl"> 【17173】休宝课堂天刀专场开启 免费学做视频</a>
+                                <i>06/28</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl"> 【官方微信】“周周礼”福利翻倍！等您来领取！</a>
+                                <i>05/08</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl"> 首届天刀编舞大赛今日开启 让角色按你的想法跳</a>
+                                <i>06/15</i>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl"> 9月23日周六新服“沧海云帆-今夕何夕”开放！</a>
+                                <i>09/15</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl">[开学季]学霸养成&时装周二期火爆开启！</a>
+                                <i>09/15</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl">《天刀助手》新版上线 功能更便捷</a>
+                                <i>08/31</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[媒体]</a>
+                                <a href="#" class="content fl">【斗鱼】八月狂欢盛宴 粉丝回馈天刀专属周开启</a>
+                                <i>08/14</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[活动]</a>
+                                <a href="#" class="content fl"> 【17173】休宝课堂天刀专场开启 免费学做视频</a>
+                                <i>08/17</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl"> 【17173】休宝课堂天刀专场开启 免费学做视频</a>
+                                <i>06/28</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl"> 【官方微信】“周周礼”福利翻倍！等您来领取！</a>
+                                <i>05/08</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl"> 首届天刀编舞大赛今日开启 让角色按你的想法跳</a>
+                                <i>06/15</i>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl"> 9月23日周六新服“沧海云帆-今夕何夕”开放！</a>
+                                <i>09/15</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl">[开学季]学霸养成&时装周二期火爆开启！</a>
+                                <i>09/15</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl">《天刀助手》新版上线 功能更便捷</a>
+                                <i>08/31</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[媒体]</a>
+                                <a href="#" class="content fl">【斗鱼】八月狂欢盛宴 粉丝回馈天刀专属周开启</a>
+                                <i>08/14</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[活动]</a>
+                                <a href="#" class="content fl"> 【17173】休宝课堂天刀专场开启 免费学做视频</a>
+                                <i>08/17</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl"> 【17173】休宝课堂天刀专场开启 免费学做视频</a>
+                                <i>06/28</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl"> 【官方微信】“周周礼”福利翻倍！等您来领取！</a>
+                                <i>05/08</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl"> 首届天刀编舞大赛今日开启 让角色按你的想法跳</a>
+                                <i>06/15</i>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl"> 9月23日周六新服“沧海云帆-今夕何夕”开放！</a>
+                                <i>09/15</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl">[开学季]学霸养成&时装周二期火爆开启！</a>
+                                <i>09/15</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl">《天刀助手》新版上线 功能更便捷</a>
+                                <i>08/31</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[媒体]</a>
+                                <a href="#" class="content fl">【斗鱼】八月狂欢盛宴 粉丝回馈天刀专属周开启</a>
+                                <i>08/14</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[活动]</a>
+                                <a href="#" class="content fl"> 【17173】休宝课堂天刀专场开启 免费学做视频</a>
+                                <i>08/17</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl"> 【17173】休宝课堂天刀专场开启 免费学做视频</a>
+                                <i>06/28</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl"> 【官方微信】“周周礼”福利翻倍！等您来领取！</a>
+                                <i>05/08</i>
+                            </p>
+                            <p>
+                                <a href="#" class="nav fl">[新闻]</a>
+                                <a href="#" class="content fl"> 首届天刀编舞大赛今日开启 让角色按你的想法跳</a>
+                                <i>06/15</i>
+                            </p>
+                        </li>
+                    </ol>
+            </div>
+        </div>
+        <div class="news-c-r">
+            <div>
+                <a href="#">
+                    <img src="../images/home-event.jpg" alt=""/>
+                </a>
+            </div>
+            <span class="news-c-r-b fl span1">
+                <a href="../data/game.html"></a>
+                <h2>游戏特色</h2>
+                <p>江湖那么大</p>
+                <p>何处不天涯</p>
+            </span>
+            <span class="news-c-r-b fl span2">
+                <a href="../data/rule.html" target="_blank"></a>
+                <h2>设定站</h2>
+                <p>天下盟会</p>
+                <p>八荒剑秀</p>
+                <a href="#"></a>
+            </span>
+        </div>
+        <div class="news-r">
+            <ul class="clearfix">
+                <li>
+                    <i class="font-icon">
+                        &#xe635;
+                    </i>
+                </li>
+                <li>
+                    <i class="font-icon sp">
+                        &#xe9f5;
+                    </i>
+                </li>
+                <li>
+                    <i class="font-icon">
+                        &#xe663;
+                    </i>
+                </li>
+                <li>
+                    <i class="font-icon">
+                        &#xe60e;
+                    </i>
+                </li>
+                <li>
+                    <i class="font-icon">
+                        &#xe603;
+                    </i>
+                </li>
+                <li>
+                    <i class="font-icon">
+                        &#xe66f;
+                    </i>
+                </li>
+                <li>
+                    <i class="font-icon">
+                        &#xe6d8;
+                    </i>
+                </li>
+                <li>
+                    <i class="font-icon">
+                        &#xe622;
+                    </i>
+                </li>
+            </ul>
+            <div class="news-r-b">
+                <ol>
+                    <li>
+                        <span class="left">
+                            <h3>神刀</h3>
+                            <p>刀含杀气腾幽朔，萧飒寒芒泣鬼神</p>
+                            <p class="wq">
+                                <b>主武器：长刀</b></br>
+                                <b>副武器：鹰</b>
+                            </p>
+                            <p>
+                                <span>操作难度</span>
+                                <em></em>
+                                <em></em>
+                                <em></em>
+                                <em></em>
+                                <em class="no-Color"></em>
+                            </p>
+                            <p class="js">
+                                <a href="#" class="bg-Color">详情介绍</a>
+                                <a href="#">门派攻略</a>
+                            </p>
+                        </span>
+                        <span class="right shendao"></span>
+                    </li>
+                    <li>
+                        <span class="left">
+                            <h3>太白</h3>
+                            <p>流星白羽光出匣，一剑无痕雪漫山</p>
+                            <p class="wq">
+                                <b>主武器：剑</b></br>
+                                <b>副武器：剑鞘</b>
+                            </p>
+                            <p>
+                                <span>操作难度</span>
+                                <em></em>
+                                <em></em>
+                                <em></em>
+                                <em></em>
+                                <em class="no-Color"></em>
+                            </p>
+                            <p class="js">
+                                <a href="#" class="bg-Color">详情介绍</a>
+                                <a href="#">门派攻略</a>
+                            </p>
+                        </span>
+                        <span class="right taibai"></span>
+                    </li>
+                    <li>
+                        <span class="left">
+                            <h3>神威</h3>
+                            <p>神威倒卷翻空浪，一举冲霄气势雄</p>
+                            <p class="wq">
+                                <b>主武器：枪</b></br>
+                                <b>副武器：长弓</b>
+                            </p>
+                            <p>
+                                <span>操作难度</span>
+                                <em></em>
+                                <em></em>
+                                <em></em>
+                                <em class="no-Color"></em>
+                                <em class="no-Color"></em>
+                            </p>
+                            <p class="js">
+                                <a href="#" class="bg-Color">详情介绍</a>
+                                <a href="#">门派攻略</a>
+                            </p>
+                        </span>
+                        <span class="right shenwei"></span>
+                    </li>
+                    <li>
+                        <span class="left">
+                            <h3>唐门</h3>
+                            <p>雾霭云从飞星落，半影相依扇中情</p>
+                            <p class="wq">
+                                <b>主武器：傀儡</b></br>
+                                <b>副武器：扇子</b>
+                            </p>
+                            <p>
+                                <span>操作难度</span>
+                                <em></em>
+                                <em></em>
+                                <em></em>
+                                <em></em>
+                                <em></em>
+                            </p>
+                            <p class="js">
+                                <a href="#" class="bg-Color">详情介绍</a>
+                                <a href="#">门派攻略</a>
+                            </p>
+                        </span>
+                        <span class="right tangmen"></span>
+                    </li>
+                    <li>
+                        <span class="left">
+                            <h3>丐帮</h3>
+                            <p>醉来豪气不可收，嘘作长虹贯牛斗</p>
+                            <p class="wq">
+                                <b>主武器：缠手</b></br>
+                                <b>副武器：酒葫芦</b>
+                            </p>
+                            <p>
+                                <span>操作难度</span>
+                                <em></em>
+                                <em></em>
+                                <em></em>
+                                <em></em>
+                                <em class="no-Color"></em>
+                            </p>
+                            <p class="js">
+                                <a href="#" class="bg-Color">详情介绍</a>
+                                <a href="#">门派攻略</a>
+                            </p>
+                        </span>
+                        <span class="right gaibang"></span>
+                    </li>
+                    <li>
+                        <span class="left">
+                            <h3>天香</h3>
+                            <p>竞夸天下双无绝，独立人间第一香</p>
+                            <p class="wq">
+                                <b>主武器：伞</b></br>
+                                <b>副武器：伞中剑</b>
+                            </p>
+                            <p>
+                                <span>操作难度</span>
+                                <em></em>
+                                <em></em>
+                                <em></em>
+                                <em class="no-Color"></em>
+                                <em class="no-Color"></em>
+                            </p>
+                            <p class="js">
+                                <a href="#" class="bg-Color">详情介绍</a>
+                                <a href="#">门派攻略</a>
+                            </p>
+                        </span>
+                        <span class="right tianxiang"></span>
+                    </li>
+                    <li>
+                        <span class="left">
+                            <h3>真武</h3>
+                            <p>灵妙潜通乘风起，太极玄虚若镜清</p>
+                            <p class="wq">
+                                <b>主武器：双剑</b></br>
+                                <b>副武器：剑鞘</b>
+                            </p>
+                            <p>
+                                <span>操作难度</span>
+                                <em></em>
+                                <em></em>
+                                <em></em>
+                                <em></em>
+                                <em class="no-Color"></em>
+                            </p>
+                            <p class="js">
+                                <a href="#" class="bg-Color">详情介绍</a>
+                                <a href="#">门派攻略</a>
+                            </p>
+                        </span>
+                        <span class="right zhenwu"></span>
+                    </li>
+                    <li>
+                        <span class="left">
+                            <h3>五毒</h3>
+                            <p>动游碧落心无碍，静藏深渊迹绝踪</p>
+                            <p class="wq">
+                                <b>主武器：双刃</b></br>
+                                <b>副武器：双刃</b>
+                            </p>
+                            <p>
+                                <span>操作难度</span>
+                                <em></em>
+                                <em></em>
+                                <em></em>
+                                <em></em>
+                                <em></em>
+                            </p>
+                            <p class="js">
+                                <a href="#" class="bg-Color">详情介绍</a>
+                                <a href="#">门派攻略</a>
+                            </p>
+                        </span>
+                        <span class="right wudu"></span>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="Y_mainY">
+    <div id="Y_lfl">
+        <ul class="Y_list2">
+            <li><a href="#"><i><img src="../images/yifu.png" alt=""></i>天衣阁</a></li>
+            <li><a href="#"><i><img src="../images/fang.png" alt=""></i>同人站</a></li>
+            <li><a href="#"><i><img src="../images/jian.png" alt=""></i>精英服</a></li>
+            <li><a href="#"><i><img src="../images/che.png" alt=""></i>道具城</a></li>
+            <li><a href="#"><i><img src="../images/xinyue.png" alt=""></i>心悦特权</a></li>
+            <li><a href="#"><i><img src="../images/erji.png" alt=""></i>原声大碟</a></li>
+            <li><a href="#"><i><img src="../images/kefu.png" alt=""></i>账号安全</a></li>
+            <li><a href="#"><i><img src="../images/qq.png" alt=""></i>在线客服</a></li>
+        </ul>
+        <div class="Y_lian">
+            <span><a href="#">天刀助手</a></span>
+            <span><a href="#">官方微信</a></span>
+            <div class="Y_ma"></div>
+        </div>
+        <ul class="Y_wailian">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+        </ul>
+    </div>
+    <div id="Y_rgj">
+        <div id="Y_Top">
+            <div id="Y_qin">
+                <ul id="Y_ul">
+                    <li>
+                        <span>
+                            <h3>同人推荐</h3>
+                            <a href="#"><img src="../images/tuijian1.jpg" alt="" width="170px" height="110px"></a>
+                            <a href="#"><img src="../images/tuijian2.jpg" alt="" width="170px" height="110px"></a>
+                            <ul>
+                                <li><a href="#">【17173】休宝课堂天刀专场开启 免费学做视频</a><i>9/20</i></li>
+                                <li><a href="#">血海飘香月照（竹御）《歌曲串烧混剪》</a><i>9/20</i></li>
+                                <li><a href="#">【姿祈】三寸天堂（那天堂是我爱过你的地方 ...）</a><i>9/20</i></li>
+                                <li><a href="#">浪迹天涯第二十话：唯有丐帮 天刀四格漫画</a><i>9/20</i></li>
+                            </ul>
+                            <p>
+                                <a href="#">投稿参与</a>
+                                <a href="#">更多+</a>
+                            </p>
+
+                        </span>
+                    </li>
+                    <li  class="tR">
+                        <i></i>
+                        <span>
+                            <h3>同人视频</h3>
+                            <a href="#"><img src="../images/296.jpg" alt="" width="170px" height="110px"></a>
+                            <a href="#"><img src="../images/296%20(1).jpg" alt="" width="170px" height="110px"></a>
+                            <ul>
+                                <li><a href="#">【差不多先生】天刀有嘻哈</a><i>9/20</i></li>
+                                <li><a href="#">江湖夜话第七期 山水有相逢 望君多珍重</a><i>9/20</i></li>
+                                <li><a href="#">门派鬼畜系列 我云滇的蛮腰就是不一样</a><i>9/20</i></li>
+                                <li><a href="#">【天涯明月刀OL】怡红院开张啦-血海飘香月照</a><i>9/20</i></li>
+                            </ul>
+                            <p>
+                                <a href="#">投稿参与</a>
+                                <a href="#">更多+</a>
+                            </p>
+                        </span>
+                    </li>
+                    <li  class="tR">
+                        <i></i>
+                        <span >
+                            <h3>同人音乐</h3>
+                            <a href="#"><img src="../images/yinyue1.png" alt="" width="170px" height="110px"></a>
+                            <a href="#"><img src="../images/yinyue2.png" alt="" width="170px" height="110px"></a>
+                            <ul>
+                                <li><a href="#">乐伶自由演奏《何必诗债换酒钱》</a><i>9/20</i></li>
+                                <li><a href="#">《陌上花开》一眼藏锋谷下，归来仍是少年</a><i>9/20</i></li>
+                                <li><a href="#">翻唱MV《丹青客》假如我只有三日记忆</a><i>9/20</i></li>
+                                <li><a href="#">成女与少女的唯美时装转换秀</a><i>9/20</i></li>
+                            </ul>
+                            <p>
+                                <a href="#">投稿参与</a>
+                                <a href="#">更多+</a>
+                            </p>
+                        </span>
+                    </li>
+                    <li  class="tR">
+                        <i></i>
+                        <span >
+                            <h3>同人绘画</h3>
+                            <a href="#"><img src="../images/hua1.jpg" alt="" width="170px" height="110px"></a>
+                            <a href="#"><img src="../images/hua2.jpg" alt="" width="170px" height="110px"></a>
+                            <ul>
+                                <li><a href="#">红</a><i>9/20</i></li>
+                                <li><a href="#">思念</a><i>9/20</i></li>
+                                <li><a href="#">浪迹天涯第二十话：唯有丐帮 天刀四格漫画</a><i>9/20</i></li>
+                                <li><a href="#">天刀明玉</a><i>9/20</i></li>
+                            </ul>
+                            <p>
+                                <a href="#">投稿参与</a>
+                                <a href="#">更多+</a>
+                            </p>
+                        </span>
+                    </li>
+                    <li  class="tR">
+                        <i></i>
+                        <span >
+                            <h3>同人小说</h3>
+                            <a href="#"><img src="../images/xiaoshuo1.png" alt="" width="170px" height="110px"></a>
+                            <a href="#"><img src="../images/xiaoshuo2.jpg" alt="" width="170px" height="110px"></a>
+                            <ul>
+                                <li><a href="#">【天刀征文大赛2017】钱塘夜话</a><i>9/20</i></li>
+                                <li><a href="#">燕柯与剑</a><i>9/20</i></li>
+                                <li><a href="#">江湖少年不知愁（2）</a><i>9/20</i></li>
+                                <li><a href="#">一念  （天香X真武）</a><i>9/20</i></li>
+                            </ul>
+                            <p>
+                                <a href="#">投稿参与</a>
+                                <a href="#">更多+</a>
+                            </p>
+                        </span>
+                    </li>
+                    <li  class="tR">
+                        <i></i>
+                        <span >
+                            <h3>同人周边</h3>
+                            <a href="#"><img src="../images/bian1.png" alt="" width="170px" height="110px"></a>
+                            <a href="#"><img src="../images/bian2.jpg" alt="" width="170px" height="110px"></a>
+                            <ul>
+                                <li><a href="#">天刀兵器谱-天香</a><i>9/20</i></li>
+                                <li><a href="#">【绾茕绘卷】手绘红叶折扇丶七夕赠礼</a><i>9/20</i></li>
+                                <li><a href="#">【天刀同人之星2017】钥匙包——真武</a><i>9/20</i></li>
+                                <li><a href="#">神威新版本武器合集</a><i>9/20</i></li>
+                            </ul>
+                            <p>
+                                <a href="#">投稿参与</a>
+                                <a href="#">更多+</a>
+                            </p>
+                        </span>
+                    </li>
+                    <li class="tR">
+                        <i></i>
+                        <span  >
+                            <h3>同人COS</h3>
+                            <a href="#"><img src="../images/cos1.jpg" alt="" width="170px" height="110px"></a>
+                            <a href="#"><img src="../images/cos2.jpg" alt="" width="170px" height="110px"></a>
+                            <ul>
+                                <li><a href="#">“天刀同人之星2017”“五毒”彩雉青纹cos</a><i>9/20</i></li>
+                                <li><a href="#">“天刀同人之星2017”“半青少女”</a><i>9/20</i></li>
+                                <li><a href="#">“天刀同人之星2017”五毒彩雉青纹cos</a><i>9/20</i></li>
+                                <li><a href="#">#天刀同人之星2017# 相见欢·五毒</a><i>9/20</i></li>
+                            </ul>
+                            <p>
+                                <a href="#">投稿参与</a>
+                                <a href="#">更多+</a>
+                            </p>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div id="Y_Right">
+                <ul class="Y_four">
+                    <li><i></i><a href="#">视频</a></li>
+                    <li><i></i><a href="#">壁纸</a></li>
+                    <li><i></i><a href="#">原画</a></li>
+                    <li><i></i><a href="#">音乐</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="Y_center">
+            <div id="Y_zuo">
+                <ul class = "up">
+                    <li>媒体</li>
+                    <li class = "bs">全部</li>
+                    <li>多玩</li>
+                    <li>17173</li>
+                    <li>178</li>
+                    <li>更多＋</li>
+                </ul>
+                <ul class = "down">
+                    <li>
+                        <ol>
+                            <li>
+                                <a href="#">【熊猫】天涯明月刀主播大乱斗</a>
+                                <span>08/09</span>
+                            </li>
+                            <li>
+                                <a href="#">【17173】休宝课堂天刀专场开启 免费学做视频</a>
+                                <span>08/17</span>
+                            </li>
+                            <li>
+                                <a href="#">【斗鱼】八月狂欢盛宴 粉丝回馈天刀专属周开启</a>
+                                <span>08/14</span>
+                            </li>
+                            <li>
+                                <a href="#">天刀全新副本开封会八荒BOSS详情首曝</a>
+                                <span>06/15</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】天刀航海攻略 新版船只配件消耗汇总表</a>
+                                <span>09/18</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】攻略团 挑战开封会八荒全细节图文攻略</a>
+                                <span>09/07</span>
+                            </li>
+                            <li>
+                                <a href="#">【斗鱼】斗鱼粉丝暑期回馈月天刀专场本周开启</a>
+                                <span>08/14</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】陈致逸老师专访</a>
+                                <span>08/02</span>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <ol>
+                            <li>
+                                <a href="#">天刀全新副本开封会八荒BOSS详情首曝</a>
+                                <span>08/09</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】天刀航海攻略 新版船只配件消耗汇总表</a>
+                                <span>08/17</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】攻略团 挑战开封会八荒全细节图文攻略</a>
+                                <span>08/14</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】PVPT5装备功力增量入手顺序 琢磨计算</a>
+                                <span>06/15</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】天刀7月航海版本最全攻略资料内容</a>
+                                <span>09/18</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】掌心朱砂天一团 挑战开封会八荒路小佳</a>
+                                <span>09/07</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】沧海云帆 天刀新版本内容攻略汇总一览</a>
+                                <span>08/14</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】剑荡八荒 天刀OLS4线下赛冠亚季军专访</a>
+                                <span>08/02</span>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <ol>
+                            <li>
+                                <a href="#">【17173】休宝课堂天刀专场开启 免费学做视频</a>
+                                <span>08/09</span>
+                            </li>
+                            <li>
+                                <a href="#">少女体型海量截图首曝 相见欢互动动作展示</a>
+                                <span>08/17</span>
+                            </li>
+                            <li>
+                                <a href="#">从萝莉到国风美少女 天刀都做了哪些改变？</a>
+                                <span>08/14</span>
+                            </li>
+                            <li>
+                                <a href="#">天刀国风音乐盛典于TGC2016盛大启幕</a>
+                                <span>06/15</span>
+                            </li>
+                            <li>
+                                <a href="#">【我与天刀不解缘】天刀主策、Coser、画师…专访...</a>
+                                <span>09/18</span>
+                            </li>
+                            <li>
+                                <a href="#">修罗城玩法大揭秘 镇派武器实装效果首曝</a>
+                                <span>09/07</span>
+                            </li>
+                            <li>
+                                <a href="#">万雪窟话本上线在即 超全爆料抢先看</a>
+                                <span>08/14</span>
+                            </li>
+                            <li>
+                                <a href="#">【173】天刀交易数据报第24期 新服人气火爆</a>
+                                <span>08/02</span>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <ol>
+                            <li>
+                                <a href="#">天刀全新副本开封会八荒BOSS详情首曝</a>
+                                <span>08/09</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】天刀航海攻略 新版船只配件消耗汇总表</a>
+                                <span>08/17</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】攻略团 挑战开封会八荒全细节图文攻略</a>
+                                <span>08/14</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】PVPT5装备功力增量入手顺序 琢磨计算</a>
+                                <span>06/15</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】天刀7月航海版本最全攻略资料内容</a>
+                                <span>09/18</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】掌心朱砂天一团 挑战开封会八荒路小佳</a>
+                                <span>09/07</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】沧海云帆 天刀新版本内容攻略汇总一览</a>
+                                <span>08/14</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】剑荡八荒 天刀OLS4线下赛冠亚季军专访</a>
+                                <span>08/02</span>
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+            <div id="Y_zhong">
+                <ul class = "up">
+                    <li>攻略</li>
+                    <li class = "bs">话本</li>
+                    <li>论剑</li>
+                    <li>属性</li>
+                    <li>玩法</li>
+                    <li>更多＋</li>
+                </ul>
+                <ul class = "down">
+                    <li  class = "show">
+                        <ol>
+                            <li>
+                                <a href="#">天刀话本BOSS家庭住址大曝光</a>
+                                <span>08/10</span>
+                            </li>
+                            <li>
+                                <a href="#">团队副本回顾系列之苍梧城</a>
+                                <span>09/17</span>
+                            </li>
+                            <li>
+                                <a href="#">新版81技巧解锁搬砖新姿势</a>
+                                <span>10/06</span>
+                            </li>
+                            <li>
+                                <a href="#">新十人团本琴魔练清商开荒攻略解读</a>
+                                <span>11/15</span>
+                            </li>
+                            <li>
+                                <a href="#">团队副本回顾系列之万雪窟</a>
+                                <span>10/18</span>
+                            </li>
+                            <li>
+                                <a href="#"> 团队副本回顾系列之天峰会八荒</a>
+                                <span>12/07</span>
+                            </li>
+                            <li>
+                                <a href="#">男默女泪 话本更新改动全体验</a>
+                                <span>06/14</span>
+                            </li>
+                            <li>
+                                <a href="#">轻松打过万雪窟 95挑战简单打法（下）</a>
+                                <span>07/02</span>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <ol>
+                            <li>
+                                <a href="#"> 以战续战虽战可也 太白团战思路</a>
+                                <span>08/09</span>
+                            </li>
+                            <li>
+                                <a href="#"> 团战中那些不容忽视的神级技能</a>
+                                <span>08/17</span>
+                            </li>
+                            <li>
+                                <a href="#">3V3剑荡八荒血海区决赛 大王又来巡山啦VS血海冠军队</a>
+                                <span>08/14</span>
+                            </li>
+                            <li>
+                                <a href="#">3V3剑荡八荒血海区4强 血海爸爸VS血海冠军队</a>
+                                <span>06/15</span>
+                            </li>
+                            <li>
+                                <a href="#">3V3剑荡八荒血海区8强 血海爸爸VS砍死外国佬</a>
+                                <span>09/18</span>
+                            </li>
+                            <li>
+                                <a href="#">3V3剑荡八荒血海区16强 血海冠军VS天下第13</a>
+                                <span>09/07</span>
+                            </li>
+                            <li>
+                                <a href="#">3V3剑荡八荒天命16强集锦 断奶唐门的无奈</a>
+                                <span>08/14</span>
+                            </li>
+                            <li>
+                                <a href="#"> 3V3剑荡八荒天命区决赛赛 鱼服墨家军再次制霸</a>
+                                <span>08/02</span>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <ol>
+                            <li>
+                                <a href="#">天刀全新副本开封会八荒BOSS详情首曝</a>
+                                <span>08/09</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】天刀航海攻略 新版船只配件消耗汇总表</a>
+                                <span>08/17</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】攻略团 挑战开封会八荒全细节图文攻略</a>
+                                <span>08/14</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】PVPT5装备功力增量入手顺序 琢磨计算</a>
+                                <span>06/15</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】天刀7月航海版本最全攻略资料内容</a>
+                                <span>09/18</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】掌心朱砂天一团 挑战开封会八荒路小佳</a>
+                                <span>09/07</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】沧海云帆 天刀新版本内容攻略汇总一览</a>
+                                <span>08/14</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】剑荡八荒 天刀OLS4线下赛冠亚季军专访</a>
+                                <span>08/02</span>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <ol>
+                            <li>
+                                <a href="#">天刀全新副本开封会八荒BOSS详情首曝</a>
+                                <span>08/09</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】天刀航海攻略 新版船只配件消耗汇总表</a>
+                                <span>08/17</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】攻略团 挑战开封会八荒全细节图文攻略</a>
+                                <span>08/14</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】PVPT5装备功力增量入手顺序 琢磨计算</a>
+                                <span>06/15</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】天刀7月航海版本最全攻略资料内容</a>
+                                <span>09/18</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】掌心朱砂天一团 挑战开封会八荒路小佳</a>
+                                <span>09/07</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】沧海云帆 天刀新版本内容攻略汇总一览</a>
+                                <span>08/14</span>
+                            </li>
+                            <li>
+                                <a href="#">【多玩】剑荡八荒 天刀OLS4线下赛冠亚季军专访</a>
+                                <span>08/02</span>
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+            <div id="Y_you">
+                <a href="#">
+                    <img src="../images/home-guild.jpg" alt=""/>
+                </a>
+            </div>
+        </div>
+        <div id="Y_bottom">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="../images/1458771921062999162.jpg" width="257" height="135" alt=""/>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/1458776874552296223.jpg" width="257" height="135" alt=""/>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/1458776592794735747.jpg" width="257" height="135" alt=""/>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../images/1491978337.jpg" width="266" height="135" alt=""/>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+ <div id="below">
+        <div class="centrality">
+            <div class="b-left fl">
+                <a href="#"></a>
+            </div>
+            <div class="b-right fl">
+                <p>
+                    <a href="#">腾讯互动娱乐</a>
+                    <i>丨</i>
+                    <a href="#">服务条款</a>
+                    <i>丨</i>
+                    <a href="#">广告服务</a>
+                    <i>丨</i>
+                    <a href="#">腾讯游戏招聘</a>
+                    <i>丨</i>
+                    <a href="#">腾讯游戏客服</a>
+                    <i>丨</i>
+                    <a href="#">游戏地图</a>
+                    <i>丨</i>
+                    <a href="#">游戏活动</a>
+                    <i>丨</i>
+                    <a href="#">商务合作</a>
+                    <i>丨</i>
+                    <a href="#">网站导航</a>
+                </p>
+                <p>COPYRIGHT © 2012 – 2017 TENCENT. ALL RIGHTS RESERVED.</p>
+                <p>
+                    <a href="#">ISBN 978-7-89988-341-9</a>
+                    <i>丨</i>
+                    <a href="#">文网游备字[2015]C-RPG0199号</a>
+                </p>
+                <p>
+                    <a href="#">粤网文[2017]6138-1456号</a>
+                    <i>丨</i>
+                    <a href="#">新广出审[2015]605号</a>
+                    <i>丨</i>
+                    <a href="#">新出网证(粤)字010号</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

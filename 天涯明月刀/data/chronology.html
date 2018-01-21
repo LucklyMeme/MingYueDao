@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>天下盟会-天涯明月刀-官方网站-腾讯游戏</title>
+    <link rel="shortcut icon" href="../favicon.ico"/>
+	<link rel="shortcut icon" href="../favicon.ico"/>
+    <link rel="stylesheet" href="../css/chronology.css"/>
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            $("#main").animate({
+                top:120
+            },400,"swing",function(){
+                $("#r").animate({
+                    right:-300
+                },400,"swing");
+                $("#l").animate({
+                    left:-300
+                },400,"swing");
+            });
+        })
+    </script>
+</head>
+<body>
+<div id="beiJing">
+    <div id="main">
+        <a href="#" class="logo"><img src="../images/logo-black-mid.png"></a>
+        <div id="guashi">
+            <a href="mask.html"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="../index.html"></a>
+        </div>
+        <div id="guanxi">
+           <ul>
+               <li class="mt_gzy">
+                   <a href="person.html" target="_blank"><img src="../images/hover_gzy.png"></a>
+
+               </li>
+               <li class="mt_ynf"><img src="../images/hover_ynf.png"></li>
+               <li class="mt_myx"><img src="../images/hover_myx.png"></li>
+               <li class="mt_byx"><img src="../images/hover_byx.png"></li>
+               <li class="mt_byj"><img src="../images/hover_byj.png"></li>
+               <li class="mt_bxs"><img src="../images/hover_bxs.png"></li>
+               <li class="mt_fhx"><img src="../images/hover_fhx.png"></li>
+               <li class="mt_sgh"><img src="../images/hover_sgh.png"></li>
+               <li class="mt_qsq"><img src="../images/hover_qsq.png"></li>
+               <li class="mt_zt"> <img src="../images/hover_zt.png"> </li>
+               <li class="mt_yk"> <img src="../images/hover_yk.png"> </li>
+               <li class="mt_lxj"><img src="../images/hover_lxj.png"></li>
+           </ul>
+        </div>
+        <div class="flood">
+            <div><a href="#"><img src="../images/tree_kqsz.jpg"> </a></div>
+            <div><a href="#"><img src="../images/tree_qhl.jpg"></a></div>
+            <div><a href="#"><img src="../images/tree_sdt.jpg"></a></div>
+        </div>
+    </div>
+    <div id="r"><img src="../images/maskb07.png"></div>
+    <div id="l"><img src="../images/maskb07.png"></div>
+<script>
+    var guashi=document.getElementById("guashi")
+
+    //    var gimgs=guashi.getElementsByTagName("img")
+    var as=guashi.getElementsByTagName("a")
+
+    for (var i = 0; i < as.length; i++) {
+        as[i].index=i;
+//        as[i].translateOrigin="50px"+ +i*90+"px";
+
+
+        as[i].style.top=i*100+"px";
+        as[i].style.backgroundPositionY=-i*100+"px";
+        as[i].onmouseover= function () {
+            if(this.index==2){
+                this.style.backgroundPositionX=0+"px";
+            }else{
+                this.style.backgroundPositionX=-100+"px";
+            }
+
+        };
+        as[i].onmouseout= function () {
+            if(this.index==2){
+                this.style.backgroundPositionX=-100+"px";
+            }else{
+                this.style.backgroundPositionX=0+"px";
+            }
+
+        }
+    }
+    as[2].style.backgroundPositionX=-100+"px"
+</script>
+</body>
+</html>

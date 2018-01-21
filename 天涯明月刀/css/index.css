@@ -1,0 +1,856 @@
+/*------------腾讯广告 strat-------------------*/
+#banner{
+    width: 100%;
+    height: 42px;
+    background-color: #fff;
+}
+#banner div.page{
+    width: 970px;
+    margin:0px auto;
+}
+#banner div.page div.Tencent{
+    width: 220px;
+    height: 42px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    background:url("../images/ost-bg.png") no-repeat 0px -39px;
+}
+#banner div.page div.risk{
+    width: 163px;
+    height: 42px;
+    cursor:pointer;
+    position:relative;
+    background:url("../images/riskmin.jpg") no-repeat;
+}
+#banner div.page div.risk:hover span{
+    display: block;
+}
+#banner div.page div.risk span{
+    width: 970px;
+    height: 185px;
+    position: absolute;
+    left:-220px;
+    background:url("../images/riskmax.jpg") no-repeat;
+    z-index: 1;
+    display: none;
+}
+#banner div.page div.Game {
+    width: 220px;
+    height: 42px;
+    line-height: 42px;
+}
+#banner div.page div.Game ul li{
+    float: left;
+}
+#banner div.page div.Game ul li:first-child{
+    margin-right: 28px;
+}
+#banner div.page div.Game ul li:first-child a{
+    padding-left: 22px;
+}
+#banner div.page div.Game ul li:first-child:before{
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 12px;
+    background:url("../images/logo1.png") no-repeat;
+}
+#banner div.page div.Game ul li:last-child:after{
+    content: "";
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin-left:3px;
+    background:url("../images/ost-bg.png") no-repeat -150px -134px;
+}
+/*------------腾讯广告 end-------------------*/
+
+
+/*--------------头部区域  start----------------*/
+#header{
+    height:1125px;
+    position: relative;
+    background:url("../images/header2.jpg") no-repeat 50% center;
+}
+/*-----logo 区域  start--------  */
+#header div.logo{
+    width: 157px;
+    height: 58px;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    background: url("../images/spr-h.png") no-repeat -659px -201px;
+}
+#header div.logo a{
+    width: 157px;
+    height: 58px;
+    display: inline-block;
+}
+/*-----logo 区域  end--------  */
+
+
+/*-----视频 区域  start--------  */
+#header div.video{
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    top:371px;
+    right: 387px;
+    cursor: pointer;
+    background: url("../images/vd20170704.png") no-repeat center;
+}
+/*-----视频 区域  end--------  */
+
+
+/*-----主体 区域  start--------  */
+#header div.container{
+    height: 565px;
+    padding-top: 460px;
+}
+
+
+/*---主体 头部区域  start----*/
+#header div.container div.h-top{
+    height: 100px;
+    color: #fff;
+    text-align: center;
+    margin-bottom:50px;
+}
+#header div.container div.h-top ul li{
+    width: 255px;
+    height: 100px;
+    background: #2fc3a3 url("../images/spr-h.png") no-repeat -280px -387px;
+    float: left;
+    margin-right: 16px;
+    position: relative;
+}
+#header div.container div.h-top ul li:hover{
+    opacity: .8;
+}
+#header div.container div.h-top ul li:last-child{
+    background: #cfae69 url("../images/spr-h.png") no-repeat -280px -387px;
+}
+#header div.container div.h-top ul li:last-child:after{
+    content: '';
+    width: 77px;
+    height: 77px;
+    top:0px;
+    right:0px;
+    position: absolute;
+    background: url("../images/spr-h.png") no-repeat -739px -60px;
+}
+#header div.container div.h-top ul li a{
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+#header div.container div.h-top ul li b{
+    color: #fff;
+    font-size: 26px;
+    display: block;
+    margin-top: 25px;
+}
+#header div.container div.h-top ul li i{
+    font-size: 9px;
+    opacity: .3;
+}
+/*---主体 头部区域  end----*/
+
+
+/*---主体 中间区域  start----*/
+#header div.container div.h-center{
+    margin-bottom: 30px;
+}
+#header div.container div.h-center div{
+    width: 312px;
+    height: 280px;
+    float: left;
+}
+#header div.container div.h-center div+div{
+    margin-left:30px;
+}
+
+/*轮播图 strat*/
+#carousel{
+    position: relative;
+    overflow: hidden;
+}
+#carousel ul{
+    width:1560px;
+    height: 280px;
+    position: absolute;
+}
+#carousel ul li{
+    height: 280px;
+    width: 312px;
+    float: left;
+}
+#carousel ol{
+    position:absolute;
+    bottom: 17px;
+    right: 0px;
+    cursor:pointer;
+}
+#carousel ol li{
+    width: 15px;
+    height: 15px;
+    border-radius:50%;
+    float: left;
+    background:#9b9b9b;
+    margin-right:7px;
+}
+#carousel ol li.datsId{
+    width: 25px;
+    background-color: #02b8a9;
+    border-radius:37%;
+}
+/*轮播图 end*/
+
+
+/*---主体 中间区域  end----*/
+
+
+/*---主体 底部区域  end----*/
+#header div.container div.h-bottom ul li{
+    float: left;
+    width: 175px;
+    height: 80px;
+    border-bottom: 5px solid #1c1c1c;
+    background: #1c1c1c;
+    position: relative;
+    padding:20px 33px 0px 24px;
+}
+#header div.container div.h-bottom ul li:hover{
+    border-bottom: 5px solid #cfae69;
+}
+#header div.container div.h-bottom ul li a{
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    top:0px;
+    left: 0px;
+}
+#header div.container div.h-bottom ul li+li{
+    margin-left: 22px;
+}
+#header div.container div.h-bottom ul li p{
+    position: relative;
+}
+#header div.container div.h-bottom ul li b{
+    color: #cfae69;
+    font-size:22px;
+    display: block;
+}
+#header div.container div.h-bottom ul li em{
+    color: #aaa;
+    display: block;
+}
+#header div.container div.h-bottom ul li i.bgImg{
+    background-image: url("../images/spr-h.png");
+}
+#header div.container div.h-bottom ul li i.add{
+    width: 17px;
+    height: 17px;
+    display: inline-block;
+    margin-top: 6px;
+    background-position: -799px -257px;
+}
+#header div.container div.h-bottom ul li i.sum{
+    width: 41px;
+    height: 41px;
+    position: absolute;
+    right: 0px;
+    top: 13px;
+}
+#header div.container div.h-bottom ul li i.one{
+    background-position: 0px -344px;
+}
+#header div.container div.h-bottom ul li i.two{
+    background-position: -256px -344px;
+}
+#header div.container div.h-bottom ul li i.three{
+    background-position: -512px -344px;
+}
+#header div.container div.h-bottom ul li i.four{
+    background-position: -768px -344px;
+}
+
+/*---主体 底部区域  end----*/
+
+/*-----主体 区域  end--------  */
+
+/*--------------头部区域  end----------------*/
+
+
+
+
+/*--------------中间内容区域 strat----------------*/
+#main{
+    height: 1117px;
+}
+/*---------------上面内容*/
+#main .up{
+    height: 514px;
+    /*background-color: red;*/
+    background: url("../images/bg2-20160419.jpg") center;
+}
+#main .up .container h2{
+    height: 120px;
+    padding-top: 50px;
+}
+#main .up .container h2 p{
+    font-size: 20px;
+    opacity: 0.1;
+}
+#main .up .container h2 span{
+    font-size: 40px;
+    line-height: 40px;
+    color: #000000;
+}
+#main .up .container h2 .change{
+    color:#2fc3a3;
+}
+#main .up .container ul{
+    height: 291px;
+    background: url("../images/shendao.jpg") center;
+}
+#main .up .container ul li {
+    padding-top: 140px;
+    width: 200px;
+    height: 151px;
+    float: left;
+    cursor: pointer;
+    text-align: center;
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    /*background: url("../Images/gmk.png") center;*/
+}
+#main .up .container ul li span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius:50%;
+    width: 200%;
+    height: 0;
+    transform: scale(0);
+    opacity: 0;
+    transition: all .3s ease-out 0s;
+    z-index: 2;
+    background: url("../images/gmk.png") center;
+    display: block;
+    padding: 0 0 200%;
+    margin: -100% 0 0 -100%;
+}
+#main .up .container ul li:hover span{
+    transform: scale(1);
+    opacity: .9;
+}
+#main .up .container ul li p{
+    color:white;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    z-index: 3;
+}
+#main .up .container ul li i{
+    width: 54px;
+    height: 54px;
+    top:66px;
+    left: 74px;
+    position:absolute;
+    z-index: 3;
+    display: inline-block;
+    background:url("../images/numberspr.png") no-repeat 0px 0px;
+}
+#main .up .container ul li:nth-child(2) i{
+    background-position: -54px 0px;
+}
+#main .up .container ul li:nth-child(3) i{
+    background-position: -108px 0px;
+}
+#main .up .container ul li:nth-child(4) i{
+    background-position: -162px 0px;
+}
+#main .up .container ul li:nth-child(5) i{
+    background-position: -216px 0px;
+}
+#main .up .container ul li a{
+    line-height: 30px;
+    position: absolute;
+    top:190px;
+    left: 60px;
+    display: block;
+    margin-top: 20px;
+    width: 80px;
+    height: 30px;
+    background: #2fc3a3;
+    border-radius: 15px 15px;
+    z-index: 99;
+}
+
+
+/*---------------下面内容*/
+#main .down{
+    height: 603px;
+    background: url("../images/down.jpg") center;
+}
+#main .down .container{
+    position: relative;
+}
+#main .down .container h2{
+    height: 120px;
+    padding-top: 50px;
+}
+#main .down .container h2 p{
+    font-size: 20px;
+    color: whitesmoke;
+    opacity: 0.1;
+}
+#main .down .container h2 span{
+    font-size: 40px;
+    line-height: 40px;
+    color: #363839;
+}
+#main .down .container h2 .change1{
+    color:white;
+}
+#main .down .container h2 .change2{
+    color:#cfae69;
+}
+#main div.down div.container ul{
+    position: absolute;
+    width: 100%;
+    height: 350px;
+}
+#main div.down div.container ul li{
+    height: 350px;
+    width: 63px;
+    position: absolute;
+    z-index: 2;
+}
+#main div.down div.container ol{
+    position: absolute;
+}
+#main div.down div.container ol li{
+    position: absolute;
+    width: 559px;
+    height: 350px;
+    cursor:pointer;
+}
+#main .down .container ol {
+    height: 350px;
+    position: relative;
+}
+#main .down .container ol li{
+    width: 559px;
+    height: 350px;
+    background: url("../images/bg-uts.jpg") center;
+    position: absolute;
+    /*display: none;*/
+}
+#main .down .container ol li h3{
+    position:absolute;
+    top :40px;
+    left: 40px;
+    line-height: 80px;
+    font-size: 65px;
+    color:#cfae69;
+}
+#main .down .container ol li em{
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    left: 180px;
+    top:55px;
+    background: url("../images/spr-2.png") no-repeat -302px -28px;
+}
+#main .down .container ol li:nth-child(2) em{
+    background: url("../images/spr-2.png") no-repeat -258px -28px;
+}
+#main .down .container ol li:nth-child(3) em{
+    background: url("../images/spr-2.png") no-repeat -214px -28px;
+}
+#main .down .container ol li:nth-child(4) em{
+    background: url("../images/spr-2.png") no-repeat -170px -28px;
+}
+#main .down .container ol li:nth-child(5) em{
+    background: url("../images/spr-2.png") no-repeat -129px -28px;
+}
+#main .down .container ol li:nth-child(6) em{
+    background: url("../images/spr-2.png") no-repeat 0px -28px;
+}
+#main .down .container ol li:nth-child(7) em{
+    background: url("../images/spr-2.png") no-repeat -85px -28px;
+}
+#main .down .container ol li:nth-child(8) em{
+    background: url("../images/spr-2.png") no-repeat -38px -28px;
+}
+#main .down .container ol li .s1{
+    position: absolute;
+    top: 120px;
+    left: 40px;
+    color:#b7b7b7;
+}
+#main .down .container ol li .s1 p:first-child{
+    font-size: 16px;
+    color:#2fc3a3;
+}
+#main .down .container ol li .s2{
+    position: absolute;
+    top:230px;
+    left: 40px;
+    height: 90px;
+}
+#main .down .container ol li .s2 p{
+    font-size: 16px;
+    color:white;
+}
+#main .down .container ol li .s2 a{
+    display: block;
+    height: 30px;
+    width: 100px;
+    color:white;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 40px;
+    background:#cfae69;
+    border-radius: 15px 15px;
+}
+#main .down .container ol li .s2 i{
+    margin:5px 2px 0 5px;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #ff8f17;
+    transform: rotateZ(45deg);
+}
+#main .down .container ol li .s2 .has{
+    background: #ff8f17;
+}
+#main .down .container ol li .s2 .no{
+    border: 1px solid #ccc;
+}
+#main .down .container ol li .s3{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 422px;
+    width: 458px;
+}
+
+#main .down .container ol li:nth-child(1) .s3{
+    background: url("../images/shendao.png") no-repeat;
+}
+#main .down .container ol li:nth-child(2) .s3{
+    background: url("../images/taibai.png");
+}
+#main .down .container ol li:nth-child(3) .s3{
+    background: url("../images/shenwei.png");
+}
+#main .down .container ol li:nth-child(4) .s3{
+    background: url("../images/tangmen.png");
+}
+#main .down .container ol li:nth-child(5) .s3{
+    background: url("../images/wudu.png");
+}
+#main .down .container ol li:nth-child(6) .s3{
+    background: url("../images/tianxiang.png");
+}
+#main .down .container ol li:nth-child(7) .s3{
+    background: url("../images/zhenwu.png");
+}
+#main .down .container ol li:nth-child(8) .s3{
+    background: url("../images/gaibang.png");
+}
+
+
+
+
+/*--------------中间内容区域  end----------------*/
+
+
+
+
+
+/*--------------底部区域  start----------------*/
+#footer{
+
+    height: 650px;
+    background: url("../images/p-3.jpg") no-repeat  50% bottom;
+}
+/*------底部上部分 start----- */
+#footer div.f-top{
+    height: 137px;
+     margin-top: 90px;
+    margin-bottom: 15px;
+}
+#footer div.f-top  div{
+    width: 495px;
+    height: 137px;
+    float: left;
+    background: #2fc3a3 url("../images/spr-c.png") no-repeat 0px -274px;
+}
+#footer div.f-top  div:hover{
+    opacity: .8;
+}
+#footer div.f-top div a{
+    width: 243px;
+    height: 137px;
+    display: block;
+    color: #fff;
+    line-height: 137px;
+    position: relative;
+    padding:0px 127px 0px 125px;
+}
+#footer div.f-top  div a span{
+    display: block;
+    margin-left: 80px;
+    font-weight: bold;
+    font-size: 40px;
+}
+#footer div.f-top  div a i{
+    width: 70px;
+    height: 60px;
+    position: absolute;
+    top: 50%;
+    margin-top:-30px;
+    background:url("../images/spr-c.png") no-repeat;
+}
+#footer div.f-top  div+div{
+    margin-left: 10px;
+}
+#footer div.f-top  div:nth-child(2){
+    background: #cfae69 url("../images/spr-c.png") no-repeat 0px -274px;
+}
+#footer div.f-top  div:nth-child(2) i{
+    background-position:-97px 0px ;
+}
+/*------底部上部分 end----- */
+
+
+/*------底部中部分 start----- */
+
+#footer div.f-center {
+    height:90px;
+}
+#footer div.f-center ul li{
+    float: left;
+    height: 90px;
+    width: 240px;
+    text-align: center;
+    line-height: 90px;
+    background: #2c2c2c;
+
+}
+#footer div.f-center ul li:hover{
+    opacity: .8;
+}
+#footer div.f-center ul li.border-left{
+    margin-left: 10px;
+}
+#footer div.f-center ul li+li{
+    margin-left: 15px;
+}
+#footer div.f-center ul li a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    font-size: 20px;
+    color: #fff;
+}
+
+/*------底部中部分 end----- */
+
+/*--------------底部区域  end----------------*/
+
+
+/*--------------最底部区域  start----------------*/
+#below{
+    height: 123px;
+    background:#202020;
+    padding-top: 35px;
+}
+#below div.b-left{
+    width: 304px;
+    height: 40px;
+    background: url("../images/nav-copy.png") no-repeat -1525px 0px;
+}
+#below div.b-left a{
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+#below div.b-right {
+    border-left: 1px solid #4f4f4f;
+    padding-left: 15px;
+}
+#below div.b-right p{
+    color:#4f4f4f;
+    height: 20px;
+}
+#below div.b-right p a{
+    color:#4f4f4f;
+}
+#below div.b-right p a:hover{
+    text-decoration: underline;
+}
+/*--------------最底部区域  end----------------*/
+
+
+/*---------------固定区域 start---------------------*/
+#fiex{
+    width: 130px;
+    height: 420px;
+    position:fixed;
+    top: 135px;
+    right: 30px;
+}
+/*---------头部区域 start-----------------*/
+#fiex div.top{
+    height: 183px;
+    margin-bottom: 5px;
+}
+#fiex div.top div.text{
+    height: 35px;
+    padding: 10px 0px 8px;
+    background: #2fc3a3;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+#fiex div.top div.text b{
+    font-size: 14px;
+    display: block;
+}
+#fiex div.top div.text i{
+    font-size: 12px;
+}
+#fiex div.top div.ewm{
+    height: 130px;
+    background: url("../images/wuxia-app-for-android.png") no-repeat;
+    background-size:contain;
+}
+/*---------头部区域 end-----------------*/
+/*---------中间区域 start-----------------*/
+#fiex div.center ul li{
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    color: #c2c2c2;
+    font-size: 13px;
+    background: #2c2c2c;
+    cursor: pointer;
+    border-bottom: 1px solid #414141;
+}
+#fiex div.center ul li:hover{
+    opacity: .8;
+}
+#fiex div.center ul li.border-no{
+    border-bottom: 0;
+}
+#fiex div.center p{
+    height: 36px;
+    line-height: 36px;
+    background: #2fc3a3;
+}
+#fiex div.center p.two-p{
+    background: #cfae69;
+}
+#fiex div.center p a{
+    color: #fff;
+    height: 36px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding:0px 24px 0px 20px;
+
+}
+#fiex div.center p i{
+    width: 23px;
+    height: 23px;
+    top: 50%;
+    margin-top:-11px;
+    position: absolute;
+    background:url("../images/spr-c.png") no-repeat 0px -82px;
+}
+#fiex div.center p i.two-i{
+    background:url("../images/spr-c.png") no-repeat -95px -82px;
+}
+#fiex div.center p span{
+    margin-left: 34px;
+    font-size: 13px;
+}
+/*---------中间区域 end-----------------*/
+/*---------底部区域 start-----------------*/
+#fiex div.bottom{
+    height: 50px;
+    position: relative;
+}
+#fiex div.bottom  a span{
+    width: 44px;
+    height: 43px;
+    position: absolute;
+    left: 50%;
+    top:5px;
+    margin-left: -22px;
+    cursor:pointer;
+    background:url("../images/spr-c.png") no-repeat 0px -231px ;
+}
+/*---------底部区域 end-----------------*/
+/*---------------固定区域 end---------------------*/
+
+/*------------右下角图标-----------------*/
+#Game{
+    width: 105px;
+    height: 53px;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    background:url("../images/ost-bg.png") no-repeat 0px -160px;
+}
+#video{
+    width: 790px;
+    height: 450px;
+    position: absolute;
+    top: 92px;
+    left: 280px;
+    display: none;
+}
+#video .muisc{
+    width: 790px;
+    height: 450px;
+    z-index: 99;
+    position: absolute;
+}
+#video span{
+    width: 60px;
+    height: 60px;
+    top: 0px;
+    cursor:pointer;
+    display: block;
+    background:#2fcaa3;
+    right: 218px;
+    top:95px;
+    position: fixed;
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    line-height: 60px;
+    z-index: 99;
+}
+#video div.login-bg{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: #000000;
+    z-index: 2;
+    opacity: 0.6;
+    display: none;
+}

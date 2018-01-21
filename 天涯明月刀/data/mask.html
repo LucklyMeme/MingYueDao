@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>天下盟会-天涯明月刀-官方网站-腾讯游戏</title>
+    <link rel="shortcut icon" href="../favicon.ico"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #qrqm {
+            position: relative;
+            width: 1522px;
+            overflow: hidden;
+            /*height: 1100px;*/
+        }
+        #mianju {
+            position: absolute;
+            top: 0;
+            z-index: 3;
+            width: 1522px;
+            height: 1100px;
+
+        }
+        #mianju img:hover{
+            cursor:pointer;
+        }
+        #m-logo {
+            position: absolute;
+            width: 420px;
+
+            left: 600px;
+            top: 200px;
+            z-index: 10;
+        }
+        #m-logo li {
+            position: absolute;
+            width: 420px;
+            display: none;
+            overflow: hidden;
+        }
+        #m-logo li>img {
+          visibility: hidden;
+            margin-top: 20px;
+
+        }
+        #m-logo li div {
+            border-bottom: 1px solid gold;
+            margin-bottom: 20px;
+            width: 420px;
+            position: absolute;
+            left: -420px;
+        }
+        #m-logo li span {
+           visibility: hidden;
+            height: 39px;
+            width: 39px;
+            position: absolute;
+            right: 0px;
+            top: 0;
+            cursor: pointer;
+            transform-origin: 20px 45px;
+        }
+        #m-logo li span img {
+            position: absolute;
+            height: 39px;
+            width: 39px;
+            right: 0;
+            top: 25px;
+        }
+
+        #guashi {
+            position: absolute;
+            z-index: 10;
+            right: 20px;
+            top: 0;
+            list-style: none;
+            height: 400px;
+        }
+        #guashi a {
+            width: 80px;
+            height: 100px;
+            position:absolute;
+            right:0;
+            top:0;
+            z-index: 10;
+            background:url("../images/spr_n.png") no-repeat;
+            transform-origin:40px 0;
+        }
+        #guashi a:hover {
+            animation: go1 2s infinite linear;
+        }
+        @keyframes go1 {
+            0% {
+                transform:rotate(0deg)
+            }
+
+            25% {
+                transform:rotate(20deg)
+            }
+            50% {
+                transform:rotate(0deg)
+            }
+            75% {
+                  transform:rotate(-20deg)
+              }
+            100% {
+                transform:rotate(0deg)
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="qrqm">
+    <img src="../images/bigbg-1.jpg" alt=""/>
+    <div id="mianju">
+        <img src="../images/m0.png" alt="" class="m0"/>
+        <img src="../images/m1.png" alt="" class="m1"/>
+        <img src="../images/m2.png" alt="" class="m2"/>
+        <img src="../images/m3.png" alt="" class="m3"/>
+        <img src="../images/m4.png" alt="" class="m4"/>
+        <img src="../images/m5.png" alt="" class="m5"/>
+        <img src="../images/m6.png" alt="" class="m6"/>
+    </div>
+    <ul id="m-logo">
+       <li>
+           <img src="../images/logo0.png" alt=""/><span><img src="../images/close-1.png" alt=""/></span>
+           <div></div>
+           <img src="../images/textintro0.png" alt=""/>
+       </li>
+        <li>
+            <img src="../images/logo1.png" alt=""/><span><img src="../images/close-1.png" alt=""/></span>
+            <div></div>
+            <img src="../images/textintro1.png" alt=""/>
+        </li>
+        <li>
+            <img src="../images/logo2.png" alt=""/><span><img src="../images/close-1.png" alt=""/></span>
+            <div></div>
+            <img src="../images/textintro2.png" alt=""/>
+        </li>
+        <li>
+            <img src="../images/logo3.png" alt=""/><span><img src="../images/close-1.png" alt=""/></span>
+            <div></div>
+            <img src="../images/textintro3.png" alt=""/>
+        </li>
+        <li>
+            <img src="../images/logo4.png" alt=""/><span><img src="../images/close-1.png" alt=""/></span>
+            <div></div>
+            <img src="../images/textintro4.png" alt=""/>
+        </li>
+    </ul>
+<div id="guashi">
+    <a href="mask.html"></a>
+    <a href="#"></a>
+    <a href="chronology.html"></a>
+    <a href="../index.html"></a>
+</div>
+</div>
+<script src="../js/function.js"></script>
+<script>
+    var g1=document.getElementById("g1")
+    var guashi=document.getElementById("guashi")
+
+//    var gimgs=guashi.getElementsByTagName("img")
+        var as=guashi.getElementsByTagName("a")
+
+    for (var i = 0; i < as.length; i++) {
+        as[i].index=i;
+//        as[i].translateOrigin="50px"+ +i*90+"px";
+
+
+      as[i].style.top=i*100+"px";
+        as[i].style.backgroundPositionY=-i*100+"px";
+        as[i].onmouseover= function () {
+            if(this.index==0){
+                this.style.backgroundPositionX=0+"px";
+            }else{
+                this.style.backgroundPositionX=-100+"px";
+            }
+
+        };
+        as[i].onmouseout= function () {
+            if(this.index==0){
+                this.style.backgroundPositionX=-100+"px";
+            }else{
+                this.style.backgroundPositionX=0+"px";
+            }
+
+        }
+    }
+as[0].style.backgroundPositionX=-100+"px"
+//    g1.onmouseover= function () {
+//        this.filters.gray.enabled=false
+//    }
+//    #m-logo li span:hover{
+//        transform-origin: 20px 45px;
+//        transform:rotate(45deg)
+//    }
+
+
+    var qrqm=document.getElementById("qrqm")
+    var mianju=document.getElementById("mianju")
+    var logos=document.getElementById("m-logo").children
+    var imgs=mianju.children
+
+    var spans=document.getElementById("m-logo").getElementsByTagName("span")
+    for (var i = 0; i < spans.length; i++) {
+        var timer12
+      spans[i].onmouseover= function () {
+          var that=this
+          var du=0
+          timer12=setInterval(
+                  function () {
+                      du+=45
+                      that.style.transform="rotate("+du+"deg)"
+                  },100
+          )
+      }
+        spans[i].onmouseout= function () {
+            this.style.transform="rotate(0deg)"
+            clearInterval(timer12)
+        }
+    }
+
+    for (var i = 0; i < imgs.length; i++) {
+      imgs[i].style.position="absolute"
+        imgs[i].style.width=220+"px"
+    }
+    imgs[0].style.top="373px"
+    imgs[0].style.left="-20px"
+    imgs[1].style.top="81px"
+    imgs[1].style.left="272px"
+    imgs[2].style.top="516px"
+    imgs[2].style.left="272px"
+    imgs[3].style.top="265px"
+    imgs[3].style.left="556px"
+    imgs[4].style.top="81px"
+    imgs[4].style.left="902px"
+    imgs[5].style.top="516px"
+    imgs[5].style.left="902px"
+    imgs[6].style.top="373px"
+    imgs[6].style.left="1226px"
+    var arrx=[272,272,556,902,902]
+    var arry=[81,516,265,81,516]
+    var flag=true
+    qrqm.onmouseover= function () {
+            document.body.onmousemove=function(e){
+                e=e||window.event
+                if(flag){
+                    var x= e.clientX
+                    var y= e.clientY+myScroll().scrollTop
+                    var imgsx=100*x/1353
+                    var imgsy=100*y/553
+                    for (var i = 1; i < imgs.length-1; i++) {
+                        biansu(imgs[i],{left:arrx[i-1]-imgsx,top:arry[i-1]-imgsy},null,20)
+                    }
+                }
+
+            }
+        for (var i = 1; i < imgs.length-1; i++) {
+            imgs[i].index=i-1
+          imgs[i].onclick= function (e) {
+              if(flag==false){
+                  return
+              }
+//              mianju.mousemove=null
+                flag=false
+//              document.body.removeEventListener("mousemove", yidong);
+              e=e||window.event
+              var x= e.clientX
+              var y= e.clientY+myScroll().scrollTop
+              var imgsx=100*x/1353
+              var imgsy=100*y/553
+              var that=this
+              for (var i = 1; i < imgs.length-1; i++) {
+                imgs[i].style.opacity=0.4
+                  imgs[i].style.width="160px"
+              }
+              this.style.opacity=1
+              this.style.width="220px"
+              biansu(imgs[3],{top:arry[this.index],left:arrx[this.index]}, null,20)
+              biansu(this, {top: 200, left: 380},
+                      function () {
+                          logos[that.index].style.display="block"
+                          biansu(logos[that.index].children[2],{left:0}, function () {
+
+                              for (var i = 0; i < logos[that.index].children.length; i++) {
+                                  logos[that.index].children[i].style.visibility="visible"
+                              }
+                              logos[that.index].children[1].onclick= function () {
+                                  for (var i = 0; i < logos[that.index].children.length; i++) {
+                                      logos[that.index].children[i].style.visibility = "hidden"
+                                  }
+                                  logos[that.index].children[2].style.visibility="visible"
+                                  biansu(logos[that.index].children[2],{left:-400}, function () {
+
+                                      logos[that.index].children[2].style.left = "-400px"
+                                      logos[that.index].style.display="none"
+                                      for (var i = 1; i < imgs.length - 1; i++) {
+                                          biansu(imgs[i], {left: arrx[i - 1], top: arry[i - 1]}, function () {
+                                              for (var i = 1; i < imgs.length-1; i++) {
+                                                  biansu(imgs[i],{left:arrx[i-1]-imgsx,top:arry[i-1]-imgsy,opacity:1,width:220}, function () {
+                                                      flag=true
+                                                  },20)
+                                              }
+                                          }, 20)
+                                      }
+                                  },20)
+                              }
+                          },20)
+                      }
+                      , 20)
+          }
+        }
+    }
+    function myScroll() {
+        return {
+            scrollLeft: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
+            scrollTop: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+        }
+    }
+
+</script>
+</body>
+</html>

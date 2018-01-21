@@ -1,0 +1,97 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+em,i {
+	font-style: normal;
+}
+
+li {
+	list-style: none
+}
+
+img {
+	border: 0;
+	vertical-align: middle
+}
+
+button {
+	cursor: pointer
+}
+
+a {
+	color: #000;
+	text-decoration: none
+}
+
+
+
+button,input {
+	font-family: Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	background-color: #f6f6f6;
+	font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif;
+	color: #666
+}
+
+.hide,.none {
+	display: none
+}
+
+.clearfix:after {
+	visibility: hidden;
+	clear: both;
+	display: block;
+	content: ".";
+	height: 0
+}
+
+.clearfix {
+	*zoom: 1
+}
+
+/* 版心 */
+.container {
+	width: 1282px;
+	margin:0 auto;
+}
+.centrality{
+	width:1000px;
+	margin:0 auto;
+}
+
+/* 左右浮动的模块 */
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right !important;
+}
+
+
+/* 字体图标 */
+@font-face {
+	font-family: 'iconfont';
+	src: url('fonts/iconfont.eot');
+	src: url('fonts/iconfont.eot?#iefix') format('embedded-opentype'),
+	url('fonts/iconfont.woff') format('woff'),
+	url('fonts/iconfont.ttf') format('truetype'),
+	url('fonts/iconfont.svg#iconfont') format('svg');
+}
+
+/* 字体图标 */
+.font-icon {
+	font-family: 'iconfont';
+}
+
+
+/* 表单元素的初始化 */
+input {
+	border:none;
+	outline: none;
+}

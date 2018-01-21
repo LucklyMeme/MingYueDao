@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>天那么大，何处不天涯</title>
+    <link rel="shortcut icon" href="../favicon.ico"/>
+    <link rel="stylesheet" href="../css/game.css"/>
+</head>
+<script src="../js/jquery-1.12.4.min.js"></script>
+
+<script>
+    $(function () {
+        var $lis = $("#z_2tu .z_diZhi>.list").children()
+        var num = 0
+        $(" #z_2tu .z_diZhi>.r").click(function () {
+            num++
+            (num == $lis.length) && (num = 0)
+            $lis.eq(num).stop().fadeIn(1000).siblings().stop().fadeOut()
+        }).next().click(function () {
+            num--
+            (num == -1) && (num = $lis.length - 1)
+            $lis.eq(num).stop().fadeIn(1000).siblings().stop().fadeOut()
+        });
+//        图五特效
+        $("#FB>li>a").click(function () {
+            $(this).parent().addClass("cur").siblings().removeClass("cur");
+            return false
+        })
+//        图六特效
+        var btn6 = document.getElementById("btn6")
+        var is = btn6.getElementsByTagName("i")
+        var arr6 = [-5, 161, 79, -4, 244, 168, 325];
+        $("#btn6>span").click(function () {
+            for (var i = 0; i < is.length; i++) {
+                is[i].style.backgroundPositionX = -arr6[i] + "px"
+            }
+            for (var i = 0; i < arr6.length; i++) {
+                if ($(this).index() == i) {
+                    var count = arr6[i] + 464;
+                    $(this).addClass("cur").siblings().removeClass("cur")
+                    $(this).children().css("backgroundPositionX", "-" + count + "px");
+                }
+            }
+            $("#z_menpai>li").eq($(this).index()).fadeIn(500).siblings().fadeOut();
+
+        });
+
+
+//        图7 特效
+        $("#btn7>li").mouseenter(function () {
+            $(this).css("opacity", "1")
+        }).mouseleave(function () {
+            $(this).css("opacity", "0")
+        })
+//        图8特效
+        $("#btn8>span").click(function () {
+            $(this).addClass("cur").siblings().removeClass("cur");
+            if ($(this).index() > $("#img8>li").length - 1) {
+                alert("敬请期待")
+            }
+            $("#img8>li").eq($(this).index()).fadeIn(500).siblings().fadeOut();
+
+        })
+    })
+</script>
+<body>
+<div id="dowebok">
+    <div id="hz">
+        <div id="z_1tu" class="section">
+    <div class="z_banxin">
+        <h1>江湖那么大，何处不天涯</h1>
+        <ul class="z_nav" id="oneUL">
+            <li>场景</li>
+            <li>人物</li>
+            <li>剧情</li>
+            <li>战斗</li>
+            <li>门派</li>
+            <li>盟会</li>
+            <li>身份</li>
+        </ul>
+        <div class="z_jt"></div>
+        <div class="z_tdao">
+            <a href="#">天涯明月刀</a>
+        </div>
+        <!-- 二维码-->
+        <div class="z_erw">
+            <img src="../images/wuxia-ewm.jpg">
+        </div>
+        <!--官网按钮-->
+        <div class="z_btn">
+            <a href="main.html">进入官网</a>
+            <a href="#">游戏下载</a>
+        </div>
+    </div>
+</div>
+
+        <div id="z_2tu" class="section">
+            <div class="z_banxin">
+                <!-- 天高海阔-->
+                <h2>天高海阔</h2>
+                <i>极远的地方叫天涯</i>
+                <!--轮播图 -->
+                <div class="z_diZhi">
+                    <ul class="list">
+                        <li><img src="../images/1dizhi.png"></li>
+                        <li><img src="../images/2dizhi.png"></li>
+                        <li><img src="../images/3dizhi.png"></li>
+                        <li><img src="../images/4dizhi.png"></li>
+                        <li><img src="../images/5dizhi.png"></li>
+                        <!-- 假设第一张-->
+                    </ul>
+                    <span class="r"></span>
+                    <span class="l"></span>
+                </div>
+                <p>
+            <span>
+                <b class="n">傅红雪:</b>
+                这天下有七把最快的刀。
+            </span>
+            <span>
+                <b class="n">叶开:</b>
+                第一把刀是不是叫……海阔天空，浪迹天涯？
+            </span>
+            <span>
+                <b class="n">傅红雪:</b>
+                我以为你只懂风花雪月。
+            </span>
+            <span>
+                <b class="n">叶开:</b>
+                大好河山，不如共醉天涯。
+            </span>
+                </p>
+
+                <div class="z_linX">
+            <span>
+                <a href="#">场景</a>
+            </span>
+            <span class="i">
+                <a href="#">天气</a>
+            </span>
+            <span class="n">
+                <a href="#"></a>
+            </span>
+                </div>
+            </div>
+            <ul id="nav">
+                <li>场景</li>
+                <li>人物</li>
+                <li>剧情</li>
+                <li>战斗</li>
+                <li>门派</li>
+                <li>盟会</li>
+                <li>身份</li>
+            </ul>
+            <div class = "bofang">
+                <video src="../images/n0014e9rn7d.m1.mp4" autoplay="autoplay" controls="controls">
+
+                </video>
+            </div>
+        </div>
+
+        <div id="Y_figure" class="section">
+            <div class="Y_main">
+                <div id="Y_right"><img src="../images/face.png" alt=""></div>
+                <div id="Y_left">
+                    <span class="Y_pick"></span>
+                    <span>每个人的样子 就是他的故事</span>
+                    <span class="Y_three"></span>
+
+                    <div class="Y_wen">
+                        <span><i>公子羽：</i>"谁戴上了青铜面具，谁就是武林中最有权势的人"</span>
+                        <span><i>明月心：</i>"我望着你的时候，更希望看见的不是面具，而是你的样子。"</span>
+                        <span><i>公子羽：</i>"只要看到一个人穿什么，做什么，就能知道他心里在想什么。"</span>
+                        <span><i>明月心：</i>"而明月本没有心。"</span>
+                    </div>
+                    <div class="Y_js">
+                        <h1 class="Y_h">捏脸效果展示</h1>
+                        <ul id="Y_ul">
+                            <li><img src="../images/face-1.jpg" alt=""></li>
+                            <li><img src="../images/face-2.jpg" alt=""></li>
+                            <li><img src="../images/face-3.jpg" alt=""></li>
+                            <li><img src="../images/face-4.jpg" alt=""></li>
+                            <li><img src="../images/face-5.jpg" alt=""></li>
+                            <li><img src="../images/face-6.jpg" alt=""></li>
+                            <li><img src="../images/face-7.jpg" alt=""></li>
+                            <li><img src="../images/face-8.jpg" alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+                <span id="Y_video"></span>
+            </div>
+        </div>
+
+        <div id="Y_film" class="section">
+            <div class="Y_main">
+                <div class="Y_lf">
+                    <span class="Y_play"></span>
+                    <span class="Y_w"></span>
+            <span class="Y_s">
+                <p>青龙会，曾是天下间最神秘，也最强大的组织。</p>
+                <p>数十年来，却成为江湖中血雨腥风的根源。</p>
+                <p>青龙会残暴不仁、滥杀无辜，令得武林中，人人自危。</p>
+            </span>
+                </div>
+                <div class="Y_rg">
+                    <span class="Y_play"></span>
+            <span class="Y_s">
+                <p>燕云血战之后，白玉京自江湖中消失。</p>
+                <p>方龙香独揽大权、自把自为。四大龙首各怀抱负，志在江湖，先后出走；</p>
+                <p>百晓生创寒江城；上官金虹创帝王州；</p>
+                <p>子桑不寿创水龙吟；杨延玉创万里沙。</p>
+                <p>四大盟会，平分天下，与青龙会相抗衡。</p>
+
+            </span>
+                    <span class="Y_h"></span>
+                </div>
+            </div>
+        </div>
+
+        <div id="z_5tu" class="section">
+            <div class="z_banxin">
+                <div class="z_bt">
+                    <h2>形随意动</h2>
+
+                    <p>每一拳都打到实处，才叫武功</p>
+                </div>
+                <div class="z_v">
+                    <a href="#">
+                        <img src="../images/v.jpg">
+                    </a>
+                </div>
+                <div class="FBs">
+                    <ul class="FB" id="FB">
+                        <li class="FB cur">
+                            <a class="ac" href="#">
+                                <em class="cc"><i></i></em>
+                                <b class="fe ft">夜探郡王府</b>
+                            </a>
+
+                            <p>东坪郡王未曾谋反之时，亦曾是沙场上的一代名将，为国为民，血染千秋。而如今他掀起滔天巨浪，唯一原因，便是担心朝廷对西夏与辽人怀柔退让，终有一日，我大宋子民会被异族欺负了去。</p>
+                        </li>
+                        <li class="FB">
+                            <a class="ac" href="#">
+                                <em class="cc"><i></i></em>
+                                <b class="fe ft">荡平龙首山</b></a>
+
+                            <p>江湖中曾有七大天王结义，其中老七“鹰王”武功最高，亦有侠肝义胆，为人称道。然而鹰眼老七归隐龙首山之后，其子殷天翼却迷恋女色、勾结青龙会，几乎将整个十二连环坞都活活葬送……</p>
+                        </li>
+                        <li class="FB">
+                            <a class="ac" href="#">
+                                <em class="cc"><i></i></em>
+                                <b class="fe ft">鏖战郡王府</b>
+                            </a>
+
+                            <p>东坪郡王未曾谋反之时，亦曾是沙场上的一代名将，为国为民，血染千秋。而如今他掀起滔天巨浪，唯一原因，便是担心朝廷对西夏与辽人怀柔退让，终有一日，我大宋子民会被异族欺负了去。</p>
+                        </li>
+                        <li class="FB">
+                            <a class="ac" href="#">
+                                <em class="cc"><i></i></em>
+                                <b class="fe ft">奇袭血衣楼</b>
+                            </a>
+
+                            <p>血衣楼乃是青龙会麾下最耸人听闻的杀手组织，四盟八荒若不想再步步落于人后，就必须想办法反戈一击——但血衣楼总部绝不好闯。不信，你们听那到处回荡着的诡异声音……</p>
+                        </li>
+                        <li class="FB">
+                            <a class="ac" href="#">
+                                <em class="cc"><i></i></em>
+                                <b class="fe ft">强袭神武门</b>
+                            </a>
+
+                            <p>杜云松与马芳玲这对夫妇，何其疯狂，却又何其顽强。孤魂段常，郝厨子，苗天王，每个人的背后都有一段往事。而所有往事的尽头，是不死不休的战斗，亦是不离不弃的痴情。</p>
+                        </li>
+                        <li class="FB">
+                            <a class="ac" href="#">
+                                <em class="cc"><i></i></em>
+                                <b class="fe ft">雨夜镇天牢</b>
+                            </a>
+
+                            <p>开封为首善之地，却也是首恶之庄。蛇虫鼠蚁，藏污纳垢；一条黑街，一场夜雨。天牢赫赫，镇不住恶人的心肠；战意纵横，盖不过我八荒子弟的侠骨豪情！</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="x"></div>
+        </div>
+
+        <div id="z_6tu" class="section">
+            <div class="z_banxin">
+                <div>
+                    <h2>八荒论剑</h2>
+
+                    <p class="pa">八荒独立江湖外，八荒之外无江湖</p>
+
+                    <p class="i">
+                        <span class="g">有人的地方就有恩怨，有恩怨的地方就是江湖。</span>
+                        <span class="g">江湖之中，名侠沈浪，痛快一战快活王，已三十年。</span>
+                        <span class="g">小李飞刀，例无虚发，李寻欢归隐人世，已二十年。</span>
+                        <span class="g">近十年来，太白、神威、唐门、丐帮、天香、五毒、真武、神刀等派崭露头角，群雄并立于八荒之中。</span>
+                    </p>
+
+                    <div class="utd">
+                        <div class="banPai">
+                            <ul id="z_menpai">
+                                <li class="role cur"><img src="../images/tangmen.png"></li>
+                                <li class="role"><img src="../images/gaibang.png"></li>
+                                <li class="role"><img src="../images/tianxiang.png"></li>
+                                <li class="role"><img src="../images/wudu.png"></li>
+                                <li class="role"><img src="../images/zhenwu.png"></li>
+                                <li class="role"><img src="../images/shenwei.png"></li>
+                                <li class="role"><img src="../images/taibai.png"></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="z_btn" id="btn6">
+                        <span class="tm cur"><i></i></span>
+                        <span class="gb"><i></i></span>
+                        <span class="tx"><i></i></span>
+                        <span class="wd"><i></i></span>
+                        <span class="zw"><i></i></span>
+                        <span class="sw"><i></i></span>
+                        <span class="tb"><i></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="z_7tu" class="section">
+            <div class="z_banxin">
+                <div class="z_bt7">
+                    <h2>天下盟会</h2>
+
+                    <p>智者，逸者，霸者与侠者的对话</p>
+                </div>
+                <ul class="bos" id="btn7">
+                    <li class="hjc"><a></a></li>
+                    <li class="sly"><a></a></li>
+                    <li class="dwz"><a></a></li>
+                    <li class="wls"><a></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="z_8tu" class="section">
+            <div class="z_banxin">
+                <div class="z_bt8">
+                    <h2>百叶江湖</h2>
+
+                    <p>只有我才能扮演我的身份</p>
+                </div>
+                <div class="z_job">
+                    <ul id="img8">
+                        <li>
+                    <span class="pic">
+                        <img src="../images/shashou.png">
+                    </span>
+                    <span class="jinfo">
+                        <h3>杀手</h3>
+                        <p>
+                            刀头舐血，不染无名之辈之血；鹰飞兔走，不走榜上有名之人。诡行暗夜，龙鳞匿影；一击远扬，溅血迷踪。
+                        </p>
+                        <a href="#">了解更多</a>
+                    </span>
+                        </li>
+                        <li>
+                    <span class="pic">
+                        <img src="../images/wenshi.png">
+                    </span>
+                    <span class="jinfo">
+                        <h3>文士</h3>
+                        <p>
+                            书中自有千钟粟，书中自有黄金屋，书中自有颜如玉，书中自有江湖路。以书中风云笑傲世间风云；以书中筹谋淡泊世间筹谋。
+                        </p>
+                        <a href="#">了解更多</a>
+                    </span>
+                        </li>
+                        <li>
+                    <span class="pic">
+                        <img src="../images/youxia.png">
+                    </span>
+                    <span class="jinfo">
+                        <h3>游侠</h3>
+                        <p>
+                            镜锁璇玑，蝶从天水，宝出怜花，令遵钱王。前尘旧事，不过一铲挖根掘底；独享快活，看我搜罗天下珍奇！
+                        </p>
+                        <a href="#">了解更多</a>
+                    </span>
+                        </li>
+                        <li>
+                    <span class="pic">
+                        <img src="../images/bukuai.png">
+                    </span>
+                    <span class="jinfo">
+                        <h3>捕快</h3>
+                        <p>
+                            冷血无情，舍快意恩仇之剑，持庙堂法理之剑；鞠躬尽瘁，扫天下奸邪之氛，定盛世太平之氛！。
+                        </p>
+                        <a href="#">了解更多</a>
+                    </span>
+                        </li>
+                        <li>
+                    <span class="pic">
+                        <img src="../images/biaoshi.png">
+                    </span>
+                    <span class="jinfo">
+                        <h3>镖师</h3>
+                        <p>
+                            论武功，为保红货不惜死；论人脉，镖行天下有捷径。奇货可居，南北自通衢；为得镖银，西天亦可去！
+                        </p>
+                        <a href="#">了解更多</a>
+                    </span>
+                        </li>
+                        <li>
+                    <span class="pic">
+                        <img src="../images/yueling.png">
+                    </span>
+                    <span class="jinfo">
+                        <h3>乐伶</h3>
+                        <p>
+                            世人皆重颜色，我以色笑为刀剑；世人皆爱歌舞，我以歌舞为甲胄。琵琶瑶琴和锦瑟，世间知音又几何？
+                        </p>
+                        <a href="#">了解更多</a>
+                    </span>
+                        </li>
+                        <li>
+                    <span class="pic">
+                        <img src="../images/liehu.png">
+                    </span>
+                    <span class="jinfo">
+                        <h3>猎户</h3>
+                        <p>
+                            驯服犬马，自可以驯服猛虎；缚鹰之手，亦无惧力缚苍龙。深山密林，是我之常胜沙场；百鸟万兽，乃我之帐下先锋。
+                        </p>
+                        <a href="#">了解更多</a>
+                    </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="z_btn" id="btn8">
+                    <span class="ss cur"><i></i></span>
+                    <span class="ws"><i></i></span>
+                    <span class="yx"><i></i></span>
+                    <span class="bk"><i></i></span>
+                    <span class="bs"><i></i></span>
+                    <span class="yl"><i></i></span>
+                    <span class="lh"><i></i></span>
+                    <span class="yb"><i></i></span>
+                    <span class="thl"><i></i></span>
+                    <span class="cj"><i></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $(function () {
+        function myWheelEvent(options) {
+            document.body.onmousewheel = fun;
+            //addEventListener使用以前的兼容性封装处理即可
+            document.body.addEventListener("DOMMouseScroll", fun);
+            function fun(e) {
+                //如何在滚动滚轮时判断，当前滚轮滚动的方向呢？
+                //判断方式通过事件对象的属性值即可检测
+                //1 事件对象的兼容
+                var e = e || window.event;
+                //2 检测时发现，有两种属性可以获取到滚轮的方向
+//    console.log(e.wheelDelta, e.detail);
+                var detail = e.wheelDelta || e.detail;
+                //3 对detail兼容后的结果进行判断，
+                // 150 和 -3 表示向上滚动
+                // -150 和 3 表示向下滚动
+
+                if (detail == 150 || detail == -3 || detail == 120) {
+                    console.log(detail);
+//        console.log("向上滚动的功能");
+                    options.upFun && options.upFun();
+
+                } else {
+//        console.log("向下滚动的功能");
+                    console.log(detail);
+                    options.downFun && options.downFun();
+
+                }
+            }
+        }
+        var hz=document.getElementById("hz");
+        var oneUL=document.getElementById("oneUL")
+        oneUL.style.position="absolute"
+        var nav=document.getElementById("nav")
+        var divs=hz.children
+
+
+        var nav=document.getElementById("nav")
+        lisol=nav.children
+        lisul=document.getElementById("oneUL").children
+        var hz=document.getElementById("hz");
+        var timer=null
+
+
+
+      $("#oneUL li").click(function () {
+          flag=false
+//          console.log($(this).index());
+          var that=$(this).index()+1
+          count=-768*that
+          $("#hz").animate({top:-768*that},1000, function () {
+              if(that>0){
+                  nav.style.display="block"
+              }else{
+                  nav.style.display="none"
+              }
+              flag=true
+              for (var i = 0; i <7; i++) {
+                  lisol[i].style.background="rgba(0,0,0,0)"
+                  lisol[i].style.color="#2fc3a3"
+              }
+              lisol[that-1].style.background="#2fc3a3"
+              lisol[that-1].style.color="white"
+          })
+      })
+        $("#nav li").click(function () {
+//          console.log($(this).index());
+            flag=false
+            var that=$(this).index()+1
+            count=-768*that
+            $("#hz").animate({top:-768*that},1000, function () {
+                if(that>0){
+                    nav.style.display="block"
+                }else{
+                    nav.style.display="none"
+                    oneUL.style.display="block"
+                }
+                flag=true
+                for (var i = 0; i <7; i++) {
+                    lisol[i].style.background="rgba(0,0,0,0)"
+                    lisol[i].style.color="#2fc3a3"
+                }
+                lisol[that-1].style.background="#2fc3a3"
+                lisol[that-1].style.color="white"
+            })
+        })
+        nav.style.display="none"
+        var count=0;
+        var flag=true;
+        myWheelEvent({
+            upFun: function () {
+                if(flag){
+                    if(count==-768){
+                        count+=768;
+                        flag=false
+                        nav.style.display = "none"
+                        $("#hz").stop().animate({top:-400},1000,
+                                function () {
+                                    $("#hz").stop().animate({top: 0}, 1000, function () {
+
+                                        flag = true
+                                    });
+                                }
+                        )
+                        oneUL.display = "block"
+                        $("#oneUL").stop().animate({bottom:200}, 1500, function () {
+
+                        })
+                    }
+                    else if(flag&&count<0){
+                        for (var i = 0; i <7; i++) {
+                            lisol[i].style.background="rgba(0,0,0,0)"
+                            lisol[i].style.color="#2fc3a3"
+                        }
+                        var index=-count/768
+                        lisol[index-2].style.background="#2fc3a3"
+                        lisol[index-2].style.color="white"
+                        count+=768;
+                        flag=false
+                        $("#hz").stop(true,false).animate({top:count},1000, function () {
+                            nav.style.display="block"
+                            flag=true
+                        })
+                    }else {
+                        hz.style.top=0
+                    }
+                }else {
+                    return
+                }
+
+            },
+            downFun: function () {
+                if(flag){
+                    if(count==0){
+                        count-=768;
+                        flag=false
+                        $("#hz").stop().animate({top:-400},1000,
+                                function () {
+                                    $("#hz").stop().animate({top: count}, 1600, function () {
+                                        nav.style.display = "block"
+                                        lisol[0].style.background="#2fc3a3"
+                                        lisol[0].style.color="white"
+                                        flag = true
+                                    });
+                                    $("#oneUL").stop().animate({bottom: -300}, 1000, function () {
+                                        oneUL.display = "none"
+                                    })
+
+                                }
+                        )
+                    }
+                    else if(count>-768*7){
+                        for (var i = 0; i <7; i++) {
+                            lisol[i].style.background="rgba(0,0,0,0)"
+                            lisol[i].style.color="#2fc3a3"
+                        }
+                        var index=-count/768
+                        lisol[index].style.background="#2fc3a3"
+                        lisol[index].style.color="white"
+                        count-=768;
+                        flag=false
+                        $("#hz").stop().animate({top:count},1000, function () {
+                            nav.style.display="block"
+                            flag=true
+                        })
+                    }else {
+                        hz.style.top=-768*7+"px"
+                    }
+                }else{
+                    return
+                }
+
+
+            }
+        })
+    })
+
+
+</script>
+<script src="../js/game.js">
+</script>
+<!--<script src="js/index.js"></script>-->
+</body>
+</html>

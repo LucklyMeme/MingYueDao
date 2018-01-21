@@ -1,0 +1,45 @@
+*{
+	margin:0px;
+	padding:0px;
+	font-size: 12px;
+}
+html,body{
+	width: 100%;
+}
+ul,ol{
+	list-style:none; 
+}
+a{
+	text-decoration: none;
+	color: #000;;
+}
+em,i{
+	font-style: normal;
+}
+button{
+	cursor:pointer;
+}
+img{
+	border:0;
+	vertical-align: middle;
+}
+.clearfix:after{
+	content: ".";
+	display: block;
+	height: 0px;
+	visibility: hidden;
+	clear: both;
+}
+.clear{
+	*zoom:1;
+}
+.container{
+	width: 1000px;
+	margin:0px auto;
+}
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}

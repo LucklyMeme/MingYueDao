@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>天下盟会-天涯明月刀-官方网站-腾讯游戏</title>
+    <link rel="shortcut icon" href="../favicon.ico"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #txmh {
+            position: relative;
+        }
+        #yu p {
+            position: absolute;
+            color: #fff9d4;
+            letter-spacing: 15px;
+            opacity: 0.1;
+            font-style:italic;
+            word-wrap: break-word;
+        }
+        #yu {
+            position: absolute;
+            height: 950px;
+            width: 1522px;
+            /*background: #CCCCCC;*/
+            overflow: hidden;
+        }
+
+        #neirong {
+            /*width: 1920px;*/
+            width: 1522px;
+            height: 905px;
+            background: url("../images/bg-111.jpg") no-repeat -177px,0;
+            /*background-size: 1366px;*/
+            position: relative;
+
+        }
+        #neirong .top {
+            position: absolute;
+            z-index: 2;
+            background: url("../images/slogn.png") no-repeat 0 0;
+            width: 664px;
+            height: 52px;
+            left: 50%;
+            margin-left: -325px;
+            top: 100px;
+            display: none;
+            z-index: 5;
+        }
+        #neirong .center {
+            position: absolute;
+            background: url("../images/slogn.png") no-repeat 0;
+            background-size: 1992px;
+            display: none;
+            z-index: 5;
+        }
+        #neirong .bottom {
+            position: absolute;
+            z-index: 5;
+            background: url("../images/slogn.png") no-repeat 0 -246px;
+            width: 664px;
+            height: 101px;
+            left: 50%;
+            margin-left: -325px;
+            top: 446px;
+            display: none;
+        }
+        #neirong .tu1 {
+            background: url("../images/esshi-1.png") no-repeat;
+            position: absolute;
+            background-size: 225px;
+            display: none;
+            z-index: 5;
+        }
+        #neirong .tu2 {
+            background: url("../images/esshi-1-1.png") no-repeat;
+            position: absolute;
+            background-size: 225px;
+            display: none;
+            z-index: 5;
+        }
+        #neirong .tu3 {
+            background: url("../images/esshi-1-2.png") no-repeat;
+            position: absolute;
+            background-size: 225px;
+            display: none;
+            z-index: 5;
+        }
+        #neirong .tu4 {
+            background: url("../images/esshi-1-3.png") no-repeat;
+            position: absolute;
+            background-size: 225px;
+            display: none;
+            z-index: 5;
+        }
+        #neirong .tu5 {
+            background: url("../images/flag.png") no-repeat -295px 0;
+            position: absolute;
+            display: none;
+            z-index: 5;
+        }
+        #tubiao {
+            background: url("../images/flag.png") no-repeat -8px 0;
+            width: 111px;
+            height: 215px;
+            position: absolute;
+            left: 1120px;
+            top: 90px;
+            z-index: 5;
+        }
+        #tubiao a {
+            display: block;
+            text-decoration: none;
+        }
+        #tubiao .tubiao1 {
+            background: url("../images/flag.png") no-repeat -134px 0;
+            width: 111px;
+            height: 74px;
+            opacity: 0;
+        }
+        #tubiao a:hover {
+            opacity: 1;
+        }
+        #tubiao .tubiao2 {
+            background: url("../images/flag.png") no-repeat -134px -74px;
+            width: 111px;
+            height: 61px;
+            opacity: 0;
+        }
+        #tubiao .tubiao3 {
+            background: url("../images/flag.png") no-repeat -134px -135px;
+            width: 111px;
+            height: 65px;
+            opacity: 0;
+        }
+        /*#neirong img {*/
+            /*position: absolute;*/
+            /*left: -277px;*/
+        /*}*/
+        
+    </style>
+    <script src="../js/function.js"></script>
+</head>
+<body>
+<div id="txmh">
+    <div id="neirong">
+
+        <div class="top">
+        </div>
+        <div class="bottom">
+        </div>
+       <div id="tubiao">
+           <a href="#" class="tubiao1"></a>
+           <a href="#" class="tubiao2"></a>
+           <a href="#" class="tubiao3"></a>
+       </div>
+        <div id="yu">
+    </div>
+
+</div>
+
+<script>
+    var txmh=document.getElementById("txmh")
+    var neirong=document.getElementById("neirong")
+    var ww=window.innerWidth
+    var wh=window.innerHeight
+    txmh.style.width=ww+"px"
+    txmh.style.position="relative"
+    function Sizetu(options){
+        this.width=options.width
+        this.height=options.height
+        this.left=options.left||"50%"
+        this.top=options.top
+        this.marginLeft=options.marginLeft||0
+        backgroundSize=options.backgroundSize
+        this.position="absolute"
+        this.zIndex=options.zIndex||2
+        this.backgroundPositionY=options.backgroundPositionY
+        this.elements
+        this.fu=options.fu
+        this.bei=options.bei||1
+        this.className=options.className
+        this.init()
+    }
+    Sizetu.prototype.init= function () {
+        this.elements=document.createElement("div")
+        var div=this.elements
+        div.className=this.className
+        div.style.width=this.width*this.bei+"px"
+        div.style.height=this.height*this.bei+"px"
+        div.style.top=this.top+"px"
+        div.style.left=this.left
+        div.style.backgroundPositionY=this.backgroundPositionY*this.bei+"px"
+        div.style.marginLeft=this.marginLeft+"px"
+        div.style.backgroundSize=this.backgroundSize*this.bei+"px"
+        this.fu.appendChild(div)
+
+    }
+    var cSize=new Sizetu({width:1992,height:507,marginLeft:-996,top:160,fu:neirong,backgroundPositionY:-165,className:"center", })
+    var csize1=new Sizetu({width:225,height:225,left:"370px",top:600,className:"tu1",fu:neirong,bei:2})
+    var csize2=new Sizetu({width:225,height:225,left:"560px",top:600,className:"tu2",fu:neirong,bei:2})
+    var csize3=new Sizetu({width:225,height:225,left:"850px",top:600,className:"tu3",fu:neirong,bei:2})
+    var csize4=new Sizetu({width:225,height:225,left:"1040px",top:600,className:"tu4",fu:neirong,bei:2})
+
+    var timer1=setTimeout(function () {
+        neirong.children[0].style.display='block'
+        neirong.children[1].style.display='block'
+        biansu(neirong.children[0],{top:150},null,100)
+        biansu(neirong.children[1],{top:396},null,100)
+        clearTimeout(timer1)
+        var timer2=setTimeout(function () {
+            var timer3=setInterval(function () {
+                if(num==1){
+                    csize1.elements.style.display="block"
+                    biansu(csize1.elements,{width:180,height:180,top:520,backgroundSize:180},null,20)
+                }
+                else if(num==2){
+                    csize2.elements.style.display="block"
+                    biansu(csize2.elements,{width:180,height:180,top:520,backgroundSize:180},null,20)
+                }
+                else if(num==3){
+                    csize3.elements.style.display="block"
+                    biansu(csize3.elements,{width:180,height:180,top:520,backgroundSize:180},null,20)
+                }
+                else if(num==4){
+                    csize4.elements.style.display="block"
+                    biansu(csize4.elements,{width:180,height:180,top:520,backgroundSize:180},null,20)
+                }
+                else if(num==5){
+                    var csize5=new Sizetu({width:124,height:126,left:"730px",top:555,className:"tu5",fu:neirong})
+                    csize5.elements.style.display="block"
+                }
+                else {
+                    clearTimeout(timer2)
+                    clearInterval(timer3)
+                    var timer4=setTimeout(function () {
+                        cSize.elements.style.display="block"
+                        jiasu(cSize.elements,{backgroundPositionY:-52,width:664,top:202,height:194,marginLeft:-332,backgroundSize:664 }, null,10,10)
+                        clearInterval(timer4)
+                    },500)
+                    var timer5=setTimeout(function () {
+                        biansu(neirong,{left:-30}, function () {
+                            biansu(neirong,{left:30}, function () {
+                                biansu(neirong,{left:0}, function () {
+                                    clearInterval(timer5)
+                                })
+                            })
+                        })
+                    },660)
+                }
+                num++
+            },400)
+        },1000)
+    },500)
+
+    var num=1
+    var yu =document.getElementById("yu")
+    var timer6=null
+    var yudi=document.getElementsByClassName("yudi")
+    timer6=setInterval(function () {
+            var p=document.createElement("p")
+            p.className="yudi"
+            p.innerText="/////////////" +
+                    "/////////////////////////////" +
+                    "//////////////////////////" +
+                    "/////////////////////" +
+                    "/////////////////////"
+//            p.style.height="200px"
+            p.style.width="300px"
+            p.style.fontSize=Math.floor(Math.random()*30+10)+"px"
+            x=Math.random()*2000-200
+            y=x/2
+            p.style.left=x+"px"
+            p.style.top=-300+"px"
+            yu.appendChild(p)
+            if(x<683){
+                biansu(p,{left:x-600,top:1500}, function () {
+                    yu.removeChild(p)
+                },5)
+            }else{
+                biansu(p,{left:x-700,top:1500},function () {
+                    yu.removeChild(p)
+                },5)
+            }
+
+    },20)
+
+
+    //    52 664 194
+</script>
+</body>
+</html>

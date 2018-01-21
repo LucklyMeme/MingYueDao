@@ -1,0 +1,162 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #232323;
+}
+i,em{
+    font-style: normal;
+}
+
+#beiJing{
+    background: url("../images/bg.png");
+    position: relative;
+    height: 768px;
+    overflow: hidden;
+}
+#beiJing #main{
+    width: 1000px;
+    margin:0 auto;
+    height: 650px;
+    position: relative;
+    top: -1000px;
+}
+#beiJing #main .logo{
+    position: absolute;
+    width: 130px;
+    height: 50px;
+    top: -60px;
+    left: 50px;
+}
+
+
+#guashi {
+    position: absolute;
+    z-index: 10;
+    top: 20px;
+    left:160px;
+    list-style: none;
+    height: 400px;
+}
+#guashi a {
+    width: 80px;
+    height: 100px;
+    position:absolute;
+    right:0;
+    top:0;
+    z-index: 10;
+    background:url("../images/spr_n.png") no-repeat;
+    transform-origin:40px 0;
+}
+#guashi a:hover {
+    animation: go1 2s infinite linear;
+}
+@keyframes go1 {
+    0% {
+        transform:rotate(0deg)
+    }
+
+    25% {
+        transform:rotate(20deg)
+    }
+    50% {
+        transform:rotate(0deg)
+    }
+    75% {
+        transform:rotate(-20deg)
+    }
+    100% {
+        transform:rotate(0deg)
+    }
+}
+#guanxi{
+    width: 670px;
+    height: 520px;
+    background: url("../images/bg_tree.png")no-repeat;
+    margin-left: 220px;
+    position: relative;
+}
+#guanxi ul li{
+    position: absolute;
+    /*background-color: aqua;*/
+    opacity: 0;
+    cursor: pointer;
+}
+#guanxi ul li:hover{
+    opacity: 1;
+}
+#guanxi ul .mt_gzy{
+    top: 130px;
+    left: -44px;
+}
+#guanxi ul .mt_ynf{
+    top: 258px;
+    left: 333px;
+}
+#guanxi ul .mt_myx{
+    top: -60px;
+    left: 350px;
+}
+#guanxi ul .mt_byx{
+    top: -77px;
+    left: -17px;
+}
+#guanxi ul .mt_byj{
+     top: 354px;
+     left: -5px;
+ }
+#guanxi ul .mt_bxs{
+    top: -87px;
+    left: 103px;
+}
+#guanxi ul .mt_fhx{
+    top: 135px;
+    left: 331px;
+}
+#guanxi ul .mt_sgh{
+    top: 328px;
+    left: 166px;
+}
+#guanxi ul .mt_qsq{
+    top: -120px;
+    left: 581px;
+}
+#guanxi ul .mt_zt{
+    top: 23px;
+    left: 585px;
+}
+#guanxi ul .mt_yk{
+    top: 115px;
+    left:585px;
+}
+#guanxi ul .mt_lxj{
+    top: 240px;
+    left: 585px;
+}
+#main .flood{
+    position: absolute;
+    bottom: 0;
+    left: 215px;
+}
+#main .flood>div{
+    width: 223px;
+    height: 120px;
+    float: left;
+
+}
+#r{
+position: absolute;
+    right: -700px;
+    top: 80px;
+}
+#l{
+position: absolute;
+    left: -700px;
+    top: 80px;
+}
